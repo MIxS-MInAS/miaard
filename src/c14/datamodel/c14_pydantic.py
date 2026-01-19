@@ -1457,7 +1457,7 @@ Sometimes referred to as the \"error\" or \"sigma\" of the measurement.""", json
          'examples': [{'value': '25'}, {'value': '620'}],
          'slot_group': 'Measurement',
          'slot_uri': 'c14:000006'} })
-    f14c: float = Field(default=..., description="""The F14C value from the laboratory measurement, i.e. the fraction modern carbon.
+    f14c: float = Field(default=..., title="F14C radiocarbon value", description="""The F14C value from the laboratory measurement, i.e. the fraction modern carbon.
 For older determinations, generally equivalent to \"percent modern\" (pMC, or pM) divided by 100.""", ge=0, le=1, json_schema_extra = { "linkml_meta": {'domain_of': ['RadiocarbonDate'],
          'examples': [{'value': '0.83756'}, {'value': '0.5371'}],
          'slot_group': 'Measurement',
@@ -1468,8 +1468,8 @@ Sometimes referred to as the \"error\" or \"sigma\" of the measurement.""", json
          'examples': [{'value': '0.00434'}, {'value': '0.023843'}],
          'slot_group': 'Measurement',
          'slot_uri': 'c14:000004'} })
-    delta_13_c_calculation_method: Optional[Delta13CMeasurementMethod] = Field(default=None, title="Delta 13C age calculation method", description="""Was the radiocarbon date calculated with an AMS derived δ13C, an IRMS derived δ13C,
-an alternative δ13C measurement method or an assumed δ13C""", json_schema_extra = { "linkml_meta": {'domain_of': ['RadiocarbonDate'],
+    delta_13_c_calculation_method: Optional[Delta13CMeasurementMethod] = Field(default=None, title="Delta 13C age calculation method", description="""Whether the radiocarbon date was calculated with an AMS derived δ13C, an IRMS derived δ13C,
+an alternative δ13C measurement method or an assumed δ13C.""", json_schema_extra = { "linkml_meta": {'domain_of': ['RadiocarbonDate'],
          'examples': [{'value': 'AMS'},
                       {'value': 'IRMS'},
                       {'value': 'Assumed'},
@@ -1503,9 +1503,9 @@ ontology or database.""", json_schema_extra = { "linkml_meta": {'domain_of': ['R
                       {'value': 'bold.taxonomy:786175'}],
          'slot_group': 'Sample',
          'slot_uri': 'c14:000010'} })
-    sample_taxon_id_confidence: bool = Field(default=..., title="Confidence of taxon assignment", description="""Specify the level of confidence of an exact taxon identification.
-If secure identification, indicate TRUE, if identification is unclear or
-uncertain specify FALSE.""", json_schema_extra = { "linkml_meta": {'domain_of': ['RadiocarbonDate'],
+    sample_taxon_id_confidence: bool = Field(default=..., title="Confident in taxon assignment", description="""Specify the level of confidence of an exact taxon identification.
+If secure identification, indicate 'true', if identification is unclear or
+uncertain specify 'false'.""", json_schema_extra = { "linkml_meta": {'domain_of': ['RadiocarbonDate'],
          'examples': [{'value': 'true'}, {'value': 'false'}],
          'slot_group': 'Sample',
          'slot_uri': 'c14:000011'} })
@@ -1519,7 +1519,7 @@ taxonomic ID does not currently exist for the specific taxon.""", json_schema_ex
          'recommended': True,
          'slot_group': 'Sample',
          'slot_uri': 'c14:000012'} })
-    sample_anatomical_part: Optional[str] = Field(default=None, title="Anatomical part from which the sample is derived.", description="""Anatomical part from which the sample is derived.""", json_schema_extra = { "linkml_meta": {'domain_of': ['RadiocarbonDate'],
+    sample_anatomical_part: Optional[str] = Field(default=None, title="Anatomical part from which the sample is derived", description="""Anatomical part from which the sample is derived.""", json_schema_extra = { "linkml_meta": {'domain_of': ['RadiocarbonDate'],
          'examples': [{'value': 'UBERON:0000981'},
                       {'value': 'PO:0009010'},
                       {'value': 'BTO:0001411'},
@@ -1527,8 +1527,8 @@ taxonomic ID does not currently exist for the specific taxon.""", json_schema_ex
          'recommended': True,
          'slot_group': 'Sample',
          'slot_uri': 'c14:000013'} })
-    suspected_sample_contamination: Optional[bool] = Field(default=None, title="Suspected sample contamination.", description="""Specify whether the sample has suspected contamination that may influence measurement
-(organic glue, consolidant, rootlets, embalming solution, staining etc.)""", json_schema_extra = { "linkml_meta": {'domain_of': ['RadiocarbonDate'],
+    suspected_sample_contamination: Optional[bool] = Field(default=None, title="Suspected sample contamination", description="""Specify whether the sample has suspected contamination that may influence measurement
+(organic glue, consolidant, rootlets, embalming solution, staining etc.).""", json_schema_extra = { "linkml_meta": {'domain_of': ['RadiocarbonDate'],
          'examples': [{'value': 'true'}, {'value': 'false'}],
          'recommended': True,
          'slot_group': 'Sample',
@@ -1547,7 +1547,7 @@ description of the contamination.""", json_schema_extra = { "linkml_meta": {'dom
          'recommended': False,
          'slot_group': 'Sample',
          'slot_uri': 'c14:000015'} })
-    sample_location: Optional[str] = Field(default=None, title="Sample location", description="""Name of location from which the sample originated""", json_schema_extra = { "linkml_meta": {'domain_of': ['RadiocarbonDate'],
+    sample_location: Optional[str] = Field(default=None, title="Sample location", description="""Name of the geographic location from which the sample originated.""", json_schema_extra = { "linkml_meta": {'domain_of': ['RadiocarbonDate'],
          'examples': [{'value': ''}, {'value': ''}],
          'recommended': True,
          'slot_group': 'Sample',
@@ -1604,15 +1604,15 @@ and decimal_longitude.""", json_schema_extra = { "linkml_meta": {'domain_of': ['
          'examples': [{'value': 'AMS'}, {'value': 'Conventional'}, {'value': 'PIMS'}],
          'slot_group': 'Method',
          'slot_uri': 'c14:000023'} })
-    sample_starting_weight: float = Field(default=..., title="Sample starting weight", description="""Amount of sample material used at beginning of  in measurement in mg.""", json_schema_extra = { "linkml_meta": {'domain_of': ['RadiocarbonDate'],
+    sample_starting_weight: float = Field(default=..., title="Sample starting weight", description="""Amount of sample material used at beginning of  in measurement in miligrams (mg).""", json_schema_extra = { "linkml_meta": {'domain_of': ['RadiocarbonDate'],
          'examples': [{'value': '521'}, {'value': '56.7'}, {'value': '1'}],
          'slot_group': 'Quality control',
          'slot_uri': 'c14:000024'} })
-    pretreatment_yield: float = Field(default=..., title="Weight after pretreatment", description="""Amount of sample remaining after pretreatment in mg""", json_schema_extra = { "linkml_meta": {'domain_of': ['RadiocarbonDate'],
+    pretreatment_yield: float = Field(default=..., title="Weight after pretreatment", description="""Amount of sample remaining after pretreatment in miligrams (mg).""", json_schema_extra = { "linkml_meta": {'domain_of': ['RadiocarbonDate'],
          'examples': [{'value': '22'}, {'value': '2.3'}],
          'slot_group': 'Quality control',
          'slot_uri': 'c14:000025'} })
-    pretreatment_percentage_yield: Optional[float] = Field(default=None, title="Percentage yield after pretreatment", description="""Ratio of weight after pretreatment to sample starting weight""", ge=0, le=1, json_schema_extra = { "linkml_meta": {'domain_of': ['RadiocarbonDate'],
+    pretreatment_proportion_yield: Optional[float] = Field(default=None, title="Proportion yield after pretreatment", description="""Proportion of weight after pretreatment to sample starting weight represented as a value between 0 and 1.""", ge=0, le=1, json_schema_extra = { "linkml_meta": {'domain_of': ['RadiocarbonDate'],
          'examples': [{'value': '012'},
                       {'value': '0.61'},
                       {'value': '0.015'},
@@ -1791,7 +1791,7 @@ class RadiocarbonDateCollection(ConfiguredBaseModel):
 
 class Extension(ConfiguredBaseModel):
     """
-    A collection of recommended metadata terms for a specific context
+    A collection of recommended metadata terms for a specific context.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://w3id.org/miaard/miaard-schema'})
 
@@ -1800,7 +1800,7 @@ class Extension(ConfiguredBaseModel):
 
 class ProteinaceousSample(Extension):
     """
-    Terms specific to proteinaceous samples being dated
+    Terms specific to proteinaceous samples being dated.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'class_uri': 'c14:ProteinaceousSample',
          'from_schema': 'https://w3id.org/miaard/miaard-schema',
@@ -1839,7 +1839,7 @@ Used as a quality control measurement.""", ge=0, le=1000, json_schema_extra = { 
 
 class CarbonateSample(Extension):
     """
-    Terms specific to carbonate samples being dated
+    Terms specific to carbonate samples being dated.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'class_uri': 'c14:CarbonateSample',
          'from_schema': 'https://w3id.org/miaard/miaard-schema',
@@ -1853,7 +1853,7 @@ class CarbonateSample(Extension):
 
 class RadiocarbonDateProteinaceousSample(ProteinaceousSample, RadiocarbonDate):
     """
-    A radiocarbon determination on a proteinaceous sample
+    A radiocarbon determination on a proteinaceous sample.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'class_uri': 'c14:RadiocarbonDateProteinaceousSample',
          'from_schema': 'https://w3id.org/miaard/miaard-schema',
@@ -1891,7 +1891,7 @@ Sometimes referred to as the \"error\" or \"sigma\" of the measurement.""", json
          'examples': [{'value': '25'}, {'value': '620'}],
          'slot_group': 'Measurement',
          'slot_uri': 'c14:000006'} })
-    f14c: float = Field(default=..., description="""The F14C value from the laboratory measurement, i.e. the fraction modern carbon.
+    f14c: float = Field(default=..., title="F14C radiocarbon value", description="""The F14C value from the laboratory measurement, i.e. the fraction modern carbon.
 For older determinations, generally equivalent to \"percent modern\" (pMC, or pM) divided by 100.""", ge=0, le=1, json_schema_extra = { "linkml_meta": {'domain_of': ['RadiocarbonDate'],
          'examples': [{'value': '0.83756'}, {'value': '0.5371'}],
          'slot_group': 'Measurement',
@@ -1902,8 +1902,8 @@ Sometimes referred to as the \"error\" or \"sigma\" of the measurement.""", json
          'examples': [{'value': '0.00434'}, {'value': '0.023843'}],
          'slot_group': 'Measurement',
          'slot_uri': 'c14:000004'} })
-    delta_13_c_calculation_method: Optional[Delta13CMeasurementMethod] = Field(default=None, title="Delta 13C age calculation method", description="""Was the radiocarbon date calculated with an AMS derived δ13C, an IRMS derived δ13C,
-an alternative δ13C measurement method or an assumed δ13C""", json_schema_extra = { "linkml_meta": {'domain_of': ['RadiocarbonDate'],
+    delta_13_c_calculation_method: Optional[Delta13CMeasurementMethod] = Field(default=None, title="Delta 13C age calculation method", description="""Whether the radiocarbon date was calculated with an AMS derived δ13C, an IRMS derived δ13C,
+an alternative δ13C measurement method or an assumed δ13C.""", json_schema_extra = { "linkml_meta": {'domain_of': ['RadiocarbonDate'],
          'examples': [{'value': 'AMS'},
                       {'value': 'IRMS'},
                       {'value': 'Assumed'},
@@ -1937,9 +1937,9 @@ ontology or database.""", json_schema_extra = { "linkml_meta": {'domain_of': ['R
                       {'value': 'bold.taxonomy:786175'}],
          'slot_group': 'Sample',
          'slot_uri': 'c14:000010'} })
-    sample_taxon_id_confidence: bool = Field(default=..., title="Confidence of taxon assignment", description="""Specify the level of confidence of an exact taxon identification.
-If secure identification, indicate TRUE, if identification is unclear or
-uncertain specify FALSE.""", json_schema_extra = { "linkml_meta": {'domain_of': ['RadiocarbonDate'],
+    sample_taxon_id_confidence: bool = Field(default=..., title="Confident in taxon assignment", description="""Specify the level of confidence of an exact taxon identification.
+If secure identification, indicate 'true', if identification is unclear or
+uncertain specify 'false'.""", json_schema_extra = { "linkml_meta": {'domain_of': ['RadiocarbonDate'],
          'examples': [{'value': 'true'}, {'value': 'false'}],
          'slot_group': 'Sample',
          'slot_uri': 'c14:000011'} })
@@ -1953,7 +1953,7 @@ taxonomic ID does not currently exist for the specific taxon.""", json_schema_ex
          'recommended': True,
          'slot_group': 'Sample',
          'slot_uri': 'c14:000012'} })
-    sample_anatomical_part: Optional[str] = Field(default=None, title="Anatomical part from which the sample is derived.", description="""Anatomical part from which the sample is derived.""", json_schema_extra = { "linkml_meta": {'domain_of': ['RadiocarbonDate'],
+    sample_anatomical_part: Optional[str] = Field(default=None, title="Anatomical part from which the sample is derived", description="""Anatomical part from which the sample is derived.""", json_schema_extra = { "linkml_meta": {'domain_of': ['RadiocarbonDate'],
          'examples': [{'value': 'UBERON:0000981'},
                       {'value': 'PO:0009010'},
                       {'value': 'BTO:0001411'},
@@ -1961,8 +1961,8 @@ taxonomic ID does not currently exist for the specific taxon.""", json_schema_ex
          'recommended': True,
          'slot_group': 'Sample',
          'slot_uri': 'c14:000013'} })
-    suspected_sample_contamination: Optional[bool] = Field(default=None, title="Suspected sample contamination.", description="""Specify whether the sample has suspected contamination that may influence measurement
-(organic glue, consolidant, rootlets, embalming solution, staining etc.)""", json_schema_extra = { "linkml_meta": {'domain_of': ['RadiocarbonDate'],
+    suspected_sample_contamination: Optional[bool] = Field(default=None, title="Suspected sample contamination", description="""Specify whether the sample has suspected contamination that may influence measurement
+(organic glue, consolidant, rootlets, embalming solution, staining etc.).""", json_schema_extra = { "linkml_meta": {'domain_of': ['RadiocarbonDate'],
          'examples': [{'value': 'true'}, {'value': 'false'}],
          'recommended': True,
          'slot_group': 'Sample',
@@ -1981,7 +1981,7 @@ description of the contamination.""", json_schema_extra = { "linkml_meta": {'dom
          'recommended': False,
          'slot_group': 'Sample',
          'slot_uri': 'c14:000015'} })
-    sample_location: Optional[str] = Field(default=None, title="Sample location", description="""Name of location from which the sample originated""", json_schema_extra = { "linkml_meta": {'domain_of': ['RadiocarbonDate'],
+    sample_location: Optional[str] = Field(default=None, title="Sample location", description="""Name of the geographic location from which the sample originated.""", json_schema_extra = { "linkml_meta": {'domain_of': ['RadiocarbonDate'],
          'examples': [{'value': ''}, {'value': ''}],
          'recommended': True,
          'slot_group': 'Sample',
@@ -2038,15 +2038,15 @@ and decimal_longitude.""", json_schema_extra = { "linkml_meta": {'domain_of': ['
          'examples': [{'value': 'AMS'}, {'value': 'Conventional'}, {'value': 'PIMS'}],
          'slot_group': 'Method',
          'slot_uri': 'c14:000023'} })
-    sample_starting_weight: float = Field(default=..., title="Sample starting weight", description="""Amount of sample material used at beginning of  in measurement in mg.""", json_schema_extra = { "linkml_meta": {'domain_of': ['RadiocarbonDate'],
+    sample_starting_weight: float = Field(default=..., title="Sample starting weight", description="""Amount of sample material used at beginning of  in measurement in miligrams (mg).""", json_schema_extra = { "linkml_meta": {'domain_of': ['RadiocarbonDate'],
          'examples': [{'value': '521'}, {'value': '56.7'}, {'value': '1'}],
          'slot_group': 'Quality control',
          'slot_uri': 'c14:000024'} })
-    pretreatment_yield: float = Field(default=..., title="Weight after pretreatment", description="""Amount of sample remaining after pretreatment in mg""", json_schema_extra = { "linkml_meta": {'domain_of': ['RadiocarbonDate'],
+    pretreatment_yield: float = Field(default=..., title="Weight after pretreatment", description="""Amount of sample remaining after pretreatment in miligrams (mg).""", json_schema_extra = { "linkml_meta": {'domain_of': ['RadiocarbonDate'],
          'examples': [{'value': '22'}, {'value': '2.3'}],
          'slot_group': 'Quality control',
          'slot_uri': 'c14:000025'} })
-    pretreatment_percentage_yield: Optional[float] = Field(default=None, title="Percentage yield after pretreatment", description="""Ratio of weight after pretreatment to sample starting weight""", ge=0, le=1, json_schema_extra = { "linkml_meta": {'domain_of': ['RadiocarbonDate'],
+    pretreatment_proportion_yield: Optional[float] = Field(default=None, title="Proportion yield after pretreatment", description="""Proportion of weight after pretreatment to sample starting weight represented as a value between 0 and 1.""", ge=0, le=1, json_schema_extra = { "linkml_meta": {'domain_of': ['RadiocarbonDate'],
          'examples': [{'value': '012'},
                       {'value': '0.61'},
                       {'value': '0.015'},
@@ -2245,7 +2245,7 @@ Used as a quality control measurement.""", ge=0, le=1000, json_schema_extra = { 
 
 class RadiocarbonDateCarbonateSample(CarbonateSample, RadiocarbonDate):
     """
-    A radiocarbon determination on a carbonate sample
+    A radiocarbon determination on a carbonate sample.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'class_uri': 'c14:RadiocarbonDateCarbonateSample',
          'from_schema': 'https://w3id.org/miaard/miaard-schema',
@@ -2283,7 +2283,7 @@ Sometimes referred to as the \"error\" or \"sigma\" of the measurement.""", json
          'examples': [{'value': '25'}, {'value': '620'}],
          'slot_group': 'Measurement',
          'slot_uri': 'c14:000006'} })
-    f14c: float = Field(default=..., description="""The F14C value from the laboratory measurement, i.e. the fraction modern carbon.
+    f14c: float = Field(default=..., title="F14C radiocarbon value", description="""The F14C value from the laboratory measurement, i.e. the fraction modern carbon.
 For older determinations, generally equivalent to \"percent modern\" (pMC, or pM) divided by 100.""", ge=0, le=1, json_schema_extra = { "linkml_meta": {'domain_of': ['RadiocarbonDate'],
          'examples': [{'value': '0.83756'}, {'value': '0.5371'}],
          'slot_group': 'Measurement',
@@ -2294,8 +2294,8 @@ Sometimes referred to as the \"error\" or \"sigma\" of the measurement.""", json
          'examples': [{'value': '0.00434'}, {'value': '0.023843'}],
          'slot_group': 'Measurement',
          'slot_uri': 'c14:000004'} })
-    delta_13_c_calculation_method: Optional[Delta13CMeasurementMethod] = Field(default=None, title="Delta 13C age calculation method", description="""Was the radiocarbon date calculated with an AMS derived δ13C, an IRMS derived δ13C,
-an alternative δ13C measurement method or an assumed δ13C""", json_schema_extra = { "linkml_meta": {'domain_of': ['RadiocarbonDate'],
+    delta_13_c_calculation_method: Optional[Delta13CMeasurementMethod] = Field(default=None, title="Delta 13C age calculation method", description="""Whether the radiocarbon date was calculated with an AMS derived δ13C, an IRMS derived δ13C,
+an alternative δ13C measurement method or an assumed δ13C.""", json_schema_extra = { "linkml_meta": {'domain_of': ['RadiocarbonDate'],
          'examples': [{'value': 'AMS'},
                       {'value': 'IRMS'},
                       {'value': 'Assumed'},
@@ -2329,9 +2329,9 @@ ontology or database.""", json_schema_extra = { "linkml_meta": {'domain_of': ['R
                       {'value': 'bold.taxonomy:786175'}],
          'slot_group': 'Sample',
          'slot_uri': 'c14:000010'} })
-    sample_taxon_id_confidence: bool = Field(default=..., title="Confidence of taxon assignment", description="""Specify the level of confidence of an exact taxon identification.
-If secure identification, indicate TRUE, if identification is unclear or
-uncertain specify FALSE.""", json_schema_extra = { "linkml_meta": {'domain_of': ['RadiocarbonDate'],
+    sample_taxon_id_confidence: bool = Field(default=..., title="Confident in taxon assignment", description="""Specify the level of confidence of an exact taxon identification.
+If secure identification, indicate 'true', if identification is unclear or
+uncertain specify 'false'.""", json_schema_extra = { "linkml_meta": {'domain_of': ['RadiocarbonDate'],
          'examples': [{'value': 'true'}, {'value': 'false'}],
          'slot_group': 'Sample',
          'slot_uri': 'c14:000011'} })
@@ -2345,7 +2345,7 @@ taxonomic ID does not currently exist for the specific taxon.""", json_schema_ex
          'recommended': True,
          'slot_group': 'Sample',
          'slot_uri': 'c14:000012'} })
-    sample_anatomical_part: Optional[str] = Field(default=None, title="Anatomical part from which the sample is derived.", description="""Anatomical part from which the sample is derived.""", json_schema_extra = { "linkml_meta": {'domain_of': ['RadiocarbonDate'],
+    sample_anatomical_part: Optional[str] = Field(default=None, title="Anatomical part from which the sample is derived", description="""Anatomical part from which the sample is derived.""", json_schema_extra = { "linkml_meta": {'domain_of': ['RadiocarbonDate'],
          'examples': [{'value': 'UBERON:0000981'},
                       {'value': 'PO:0009010'},
                       {'value': 'BTO:0001411'},
@@ -2353,8 +2353,8 @@ taxonomic ID does not currently exist for the specific taxon.""", json_schema_ex
          'recommended': True,
          'slot_group': 'Sample',
          'slot_uri': 'c14:000013'} })
-    suspected_sample_contamination: Optional[bool] = Field(default=None, title="Suspected sample contamination.", description="""Specify whether the sample has suspected contamination that may influence measurement
-(organic glue, consolidant, rootlets, embalming solution, staining etc.)""", json_schema_extra = { "linkml_meta": {'domain_of': ['RadiocarbonDate'],
+    suspected_sample_contamination: Optional[bool] = Field(default=None, title="Suspected sample contamination", description="""Specify whether the sample has suspected contamination that may influence measurement
+(organic glue, consolidant, rootlets, embalming solution, staining etc.).""", json_schema_extra = { "linkml_meta": {'domain_of': ['RadiocarbonDate'],
          'examples': [{'value': 'true'}, {'value': 'false'}],
          'recommended': True,
          'slot_group': 'Sample',
@@ -2373,7 +2373,7 @@ description of the contamination.""", json_schema_extra = { "linkml_meta": {'dom
          'recommended': False,
          'slot_group': 'Sample',
          'slot_uri': 'c14:000015'} })
-    sample_location: Optional[str] = Field(default=None, title="Sample location", description="""Name of location from which the sample originated""", json_schema_extra = { "linkml_meta": {'domain_of': ['RadiocarbonDate'],
+    sample_location: Optional[str] = Field(default=None, title="Sample location", description="""Name of the geographic location from which the sample originated.""", json_schema_extra = { "linkml_meta": {'domain_of': ['RadiocarbonDate'],
          'examples': [{'value': ''}, {'value': ''}],
          'recommended': True,
          'slot_group': 'Sample',
@@ -2430,15 +2430,15 @@ and decimal_longitude.""", json_schema_extra = { "linkml_meta": {'domain_of': ['
          'examples': [{'value': 'AMS'}, {'value': 'Conventional'}, {'value': 'PIMS'}],
          'slot_group': 'Method',
          'slot_uri': 'c14:000023'} })
-    sample_starting_weight: float = Field(default=..., title="Sample starting weight", description="""Amount of sample material used at beginning of  in measurement in mg.""", json_schema_extra = { "linkml_meta": {'domain_of': ['RadiocarbonDate'],
+    sample_starting_weight: float = Field(default=..., title="Sample starting weight", description="""Amount of sample material used at beginning of  in measurement in miligrams (mg).""", json_schema_extra = { "linkml_meta": {'domain_of': ['RadiocarbonDate'],
          'examples': [{'value': '521'}, {'value': '56.7'}, {'value': '1'}],
          'slot_group': 'Quality control',
          'slot_uri': 'c14:000024'} })
-    pretreatment_yield: float = Field(default=..., title="Weight after pretreatment", description="""Amount of sample remaining after pretreatment in mg""", json_schema_extra = { "linkml_meta": {'domain_of': ['RadiocarbonDate'],
+    pretreatment_yield: float = Field(default=..., title="Weight after pretreatment", description="""Amount of sample remaining after pretreatment in miligrams (mg).""", json_schema_extra = { "linkml_meta": {'domain_of': ['RadiocarbonDate'],
          'examples': [{'value': '22'}, {'value': '2.3'}],
          'slot_group': 'Quality control',
          'slot_uri': 'c14:000025'} })
-    pretreatment_percentage_yield: Optional[float] = Field(default=None, title="Percentage yield after pretreatment", description="""Ratio of weight after pretreatment to sample starting weight""", ge=0, le=1, json_schema_extra = { "linkml_meta": {'domain_of': ['RadiocarbonDate'],
+    pretreatment_proportion_yield: Optional[float] = Field(default=None, title="Proportion yield after pretreatment", description="""Proportion of weight after pretreatment to sample starting weight represented as a value between 0 and 1.""", ge=0, le=1, json_schema_extra = { "linkml_meta": {'domain_of': ['RadiocarbonDate'],
          'examples': [{'value': '012'},
                       {'value': '0.61'},
                       {'value': '0.015'},
