@@ -81,7 +81,7 @@ class LinkMLMeta(RootModel):
 linkml_meta = LinkMLMeta({'default_prefix': 'c14',
      'default_range': 'string',
      'description': 'Minimum Information about any Radiocarbon Determination',
-     'id': 'https://w3id.org/MIxS-MInAS/miaard',
+     'id': 'https://w3id.org/miaard/miaard-schema',
      'imports': ['linkml:types',
                  'enums/lab_codes',
                  'enums/pretreatment_methods',
@@ -90,12 +90,12 @@ linkml_meta = LinkMLMeta({'default_prefix': 'c14',
      'license': 'MIT',
      'name': 'miaard',
      'prefixes': {'c14': {'prefix_prefix': 'c14',
-                          'prefix_reference': 'https://w3id.org/MIxS-MInAS/miaard/'},
+                          'prefix_reference': 'https://w3id.org/miaard/miaard-schema/'},
                   'linkml': {'prefix_prefix': 'linkml',
                              'prefix_reference': 'https://w3id.org/linkml/'},
                   'schema': {'prefix_prefix': 'schema',
                              'prefix_reference': 'http://schema.org/'}},
-     'see_also': ['https://MIxS-MInAS.github.io/miaard'],
+     'see_also': ['https://miaard.github.io/miaard-schema'],
      'source_file': 'src/c14/schema/c14.yaml',
      'title': 'miaard'} )
 
@@ -1424,7 +1424,7 @@ class RadiocarbonDate(ConfiguredBaseModel):
     """
     A radiocarbon determination with associated metadata.
     """
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://w3id.org/MIxS-MInAS/miaard'})
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://w3id.org/miaard/miaard-schema'})
 
     lab_code: LabCode = Field(default=..., title="Laboratory code designation", description="""Unique laboratory code designation of the institution that made the measurement.
 This is the prefix used for each determination ID. The prefix should be
@@ -1784,7 +1784,7 @@ class RadiocarbonDateCollection(ConfiguredBaseModel):
     """
     A collection of radiocarbon determinations with associated metadata.
     """
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://w3id.org/MIxS-MInAS/miaard', 'tree_root': True})
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://w3id.org/miaard/miaard-schema', 'tree_root': True})
 
     entries: Optional[list[RadiocarbonDate]] = Field(default=[], description="""A list of multiple radiocarbon determinations.""", json_schema_extra = { "linkml_meta": {'domain_of': ['RadiocarbonDateCollection']} })
 
@@ -1793,7 +1793,7 @@ class Extension(ConfiguredBaseModel):
     """
     A collection of recommended metadata terms for a specific context.
     """
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://w3id.org/MIxS-MInAS/miaard'})
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://w3id.org/miaard/miaard-schema'})
 
     pass
 
@@ -1803,7 +1803,7 @@ class ProteinaceousSample(Extension):
     Terms specific to proteinaceous samples being dated.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'class_uri': 'c14:ProteinaceousSample',
-         'from_schema': 'https://w3id.org/MIxS-MInAS/miaard',
+         'from_schema': 'https://w3id.org/miaard/miaard-schema',
          'title': 'Proteinaceous Sample'})
 
     carbon_nitro_ratio: float = Field(default=..., title="Carbon to nitrogen ratio", description="""Atomic ratio of carbon to nitrogen. Used for quality control value in
@@ -1842,7 +1842,7 @@ class CarbonateSample(Extension):
     Terms specific to carbonate samples being dated.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'class_uri': 'c14:CarbonateSample',
-         'from_schema': 'https://w3id.org/MIxS-MInAS/miaard',
+         'from_schema': 'https://w3id.org/miaard/miaard-schema',
          'title': 'Carbonate Sample'})
 
     recrystalisation: bool = Field(default=..., title="Evidence of recrystalisation", description="""Sample shows evidence of recrystalisation which should be accounted for during analysis.""", json_schema_extra = { "linkml_meta": {'domain_of': ['CarbonateSample'],
@@ -1856,7 +1856,7 @@ class RadiocarbonDateProteinaceousSample(ProteinaceousSample, RadiocarbonDate):
     A radiocarbon determination on a proteinaceous sample.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'class_uri': 'c14:RadiocarbonDateProteinaceousSample',
-         'from_schema': 'https://w3id.org/MIxS-MInAS/miaard',
+         'from_schema': 'https://w3id.org/miaard/miaard-schema',
          'mixins': ['RadiocarbonDate'],
          'title': 'Radiocarbon Date (Proteinaceous Sample)'})
 
@@ -2248,7 +2248,7 @@ class RadiocarbonDateCarbonateSample(CarbonateSample, RadiocarbonDate):
     A radiocarbon determination on a carbonate sample.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'class_uri': 'c14:RadiocarbonDateCarbonateSample',
-         'from_schema': 'https://w3id.org/MIxS-MInAS/miaard',
+         'from_schema': 'https://w3id.org/miaard/miaard-schema',
          'mixins': ['RadiocarbonDate'],
          'title': 'Radiocarbon Date (Carbonate Sample)'})
 

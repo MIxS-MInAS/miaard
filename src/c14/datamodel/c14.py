@@ -1,8 +1,8 @@
 # Auto generated from c14.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-01-15T09:01:33
+# Generation date: 2026-01-14T17:25:43
 # Schema: miaard
 #
-# id: https://w3id.org/MIxS-MInAS/miaard
+# id: https://w3id.org/miaard/miaard-schema
 # description: Minimum Information about any Radiocarbon Determination
 # license: MIT
 
@@ -63,7 +63,7 @@ metamodel_version = "1.7.0"
 version = None
 
 # Namespaces
-C14 = CurieNamespace('c14', 'https://w3id.org/MIxS-MInAS/miaard/')
+C14 = CurieNamespace('c14', 'https://w3id.org/miaard/miaard-schema/')
 LINKML = CurieNamespace('linkml', 'https://w3id.org/linkml/')
 SCHEMA = CurieNamespace('schema', 'http://schema.org/')
 DEFAULT_ = C14
