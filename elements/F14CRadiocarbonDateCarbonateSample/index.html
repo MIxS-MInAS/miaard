@@ -5,10 +5,10 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="https://miaard.github.io/miaard-schema/elements/RadiocarbonDate/" rel="canonical"/>
+<link href="https://miaard.github.io/miaard-schema/elements/F14CRadiocarbonDateCarbonateSample/" rel="canonical"/>
 <link href="../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.7.0" name="generator"/>
-<title>Class: RadiocarbonDate - Minimum Information about any Radiocarbon Dertermination (MIaaRD)</title>
+<title>Class: F14C value radiocarbon date (carbonate) (F14CRadiocarbonDateCarbonateSample) - Minimum Information about any Radiocarbon Dertermination (MIaaRD)</title>
 <link href="../../assets/stylesheets/main.618322db.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -23,7 +23,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#class-radiocarbondate">
+<a class="md-skip" href="#class-f14c-value-radiocarbon-date-carbonate-f14cradiocarbondatecarbonatesample">
           Skip to content
         </a>
 </div>
@@ -47,7 +47,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Class: RadiocarbonDate
+              Class: F14C value radiocarbon date (carbonate) (F14CRadiocarbonDateCarbonateSample)
             
           </span>
 </div>
@@ -171,19 +171,19 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#slots">
+<a class="md-nav__link" href="#inheritance">
 <span class="md-ellipsis">
       
-        Slots
+        Inheritance
       
     </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#usages">
+<a class="md-nav__link" href="#slots">
 <span class="md-ellipsis">
       
-        Usages
+        Slots
       
     </span>
 </a>
@@ -257,135 +257,138 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="class-radiocarbondate">Class: RadiocarbonDate</h1>
-<p><em>A radiocarbon determination with associated metadata.</em></p>
-<p>URI: <a href="https://w3id.org/miaard/miaard-schema/RadiocarbonDate">c14:RadiocarbonDate</a></p>
+<h1 id="class-f14c-value-radiocarbon-date-carbonate-f14cradiocarbondatecarbonatesample">Class: F14C value radiocarbon date (carbonate) (F14CRadiocarbonDateCarbonateSample)</h1>
+<p><em>F14C value radiocarbon date of a carbonate sample</em></p>
+<p>URI: <a href="https://w3id.org/miaard/miaard-schema/F14CRadiocarbonDateCarbonateSample">c14:F14CRadiocarbonDateCarbonateSample</a></p>
 <div class="mermaid"> classDiagram
-    class RadiocarbonDate
-    click RadiocarbonDate href "../RadiocarbonDate/"
-      RadiocarbonDate &lt;|-- RadiocarbonDateProteinaceousSample
-        click RadiocarbonDateProteinaceousSample href "../RadiocarbonDateProteinaceousSample/"
-      RadiocarbonDate &lt;|-- RadiocarbonDateCarbonateSample
-        click RadiocarbonDateCarbonateSample href "../RadiocarbonDateCarbonateSample/"
-      RadiocarbonDate &lt;|-- F14CRadiocarbonDateProteinaceousSample
-        click F14CRadiocarbonDateProteinaceousSample href "../F14CRadiocarbonDateProteinaceousSample/"
+    class F14CRadiocarbonDateCarbonateSample
+    click F14CRadiocarbonDateCarbonateSample href "../F14CRadiocarbonDateCarbonateSample/"
       RadiocarbonDate &lt;|-- F14CRadiocarbonDateCarbonateSample
-        click F14CRadiocarbonDateCarbonateSample href "../F14CRadiocarbonDateCarbonateSample/"
-      RadiocarbonDate &lt;|-- ConventionalAgeRadiocarbonDateProteinaceousSample
-        click ConventionalAgeRadiocarbonDateProteinaceousSample href "../ConventionalAgeRadiocarbonDateProteinaceousSample/"
-      RadiocarbonDate &lt;|-- ConventionalAgeRadiocarbonDateCarbonateSample
-        click ConventionalAgeRadiocarbonDateCarbonateSample href "../ConventionalAgeRadiocarbonDateCarbonateSample/"
+        click RadiocarbonDate href "../RadiocarbonDate/"
+      CarbonateSample &lt;|-- F14CRadiocarbonDateCarbonateSample
+        click CarbonateSample href "../CarbonateSample/"
 
-      RadiocarbonDate : carbon_proportion
+      F14CRadiocarbonDateCarbonateSample : carbon_proportion
 
-      RadiocarbonDate : conventional_age
+      F14CRadiocarbonDateCarbonateSample : conventional_age
 
-      RadiocarbonDate : conventional_age_error
+      F14CRadiocarbonDateCarbonateSample : conventional_age_error
 
-      RadiocarbonDate : coordinate_precision
+      F14CRadiocarbonDateCarbonateSample : coordinate_precision
 
-      RadiocarbonDate : decimal_latitude
+      F14CRadiocarbonDateCarbonateSample : decimal_latitude
 
-      RadiocarbonDate : decimal_longitude
+      F14CRadiocarbonDateCarbonateSample : decimal_longitude
 
-      RadiocarbonDate : delta_13_c
+      F14CRadiocarbonDateCarbonateSample : delta_13_c
 
-      RadiocarbonDate : delta_13_c_calculation_method
+      F14CRadiocarbonDateCarbonateSample : delta_13_c_calculation_method
 
 
 
 
 
-        RadiocarbonDate --&gt; "0..1 _recommended_" Delta13CMeasurementMethod : delta_13_c_calculation_method
+        F14CRadiocarbonDateCarbonateSample --&gt; "0..1 _recommended_" Delta13CMeasurementMethod : delta_13_c_calculation_method
         click Delta13CMeasurementMethod href "../Delta13CMeasurementMethod/"
 
 
 
-      RadiocarbonDate : delta_13_c_error
+      F14CRadiocarbonDateCarbonateSample : delta_13_c_error
 
-      RadiocarbonDate : delta_13_c_method
-
-
+      F14CRadiocarbonDateCarbonateSample : delta_13_c_method
 
 
 
-        RadiocarbonDate --&gt; "0..1 _recommended_" Delta13CMeasurementMethod : delta_13_c_method
+
+
+        F14CRadiocarbonDateCarbonateSample --&gt; "0..1 _recommended_" Delta13CMeasurementMethod : delta_13_c_method
         click Delta13CMeasurementMethod href "../Delta13CMeasurementMethod/"
 
 
 
-      RadiocarbonDate : f14c
+      F14CRadiocarbonDateCarbonateSample : f14c
 
-      RadiocarbonDate : f14c_error
+      F14CRadiocarbonDateCarbonateSample : f14c_error
 
-      RadiocarbonDate : lab_code
-
-
+      F14CRadiocarbonDateCarbonateSample : lab_code
 
 
 
-        RadiocarbonDate --&gt; "1" LabCode : lab_code
+
+
+        F14CRadiocarbonDateCarbonateSample --&gt; "1" LabCode : lab_code
         click LabCode href "../LabCode/"
 
 
 
-      RadiocarbonDate : lab_id
+      F14CRadiocarbonDateCarbonateSample : lab_id
 
-      RadiocarbonDate : measurement_method
-
-
+      F14CRadiocarbonDateCarbonateSample : measurement_method
 
 
 
-        RadiocarbonDate --&gt; "1" RadiocarbonMeasurementMethod : measurement_method
+
+
+        F14CRadiocarbonDateCarbonateSample --&gt; "1" RadiocarbonMeasurementMethod : measurement_method
         click RadiocarbonMeasurementMethod href "../RadiocarbonMeasurementMethod/"
 
 
 
-      RadiocarbonDate : pretreatment_method_description
+      F14CRadiocarbonDateCarbonateSample : pretreatment_method_description
 
-      RadiocarbonDate : pretreatment_method_protocol
+      F14CRadiocarbonDateCarbonateSample : pretreatment_method_protocol
 
-      RadiocarbonDate : pretreatment_methods
-
-
+      F14CRadiocarbonDateCarbonateSample : pretreatment_methods
 
 
 
-        RadiocarbonDate --&gt; "1..*" PretreatmentMethods : pretreatment_methods
+
+
+        F14CRadiocarbonDateCarbonateSample --&gt; "1..*" PretreatmentMethods : pretreatment_methods
         click PretreatmentMethods href "../PretreatmentMethods/"
 
 
 
-      RadiocarbonDate : pretreatment_proportion_yield
+      F14CRadiocarbonDateCarbonateSample : pretreatment_proportion_yield
 
-      RadiocarbonDate : pretreatment_yield
+      F14CRadiocarbonDateCarbonateSample : pretreatment_yield
 
-      RadiocarbonDate : sample_anatomical_part
+      F14CRadiocarbonDateCarbonateSample : recrystalisation
 
-      RadiocarbonDate : sample_ids
+      F14CRadiocarbonDateCarbonateSample : sample_anatomical_part
 
-      RadiocarbonDate : sample_location
+      F14CRadiocarbonDateCarbonateSample : sample_ids
 
-      RadiocarbonDate : sample_material
+      F14CRadiocarbonDateCarbonateSample : sample_location
 
-      RadiocarbonDate : sample_starting_weight
+      F14CRadiocarbonDateCarbonateSample : sample_material
 
-      RadiocarbonDate : sample_taxon_id
+      F14CRadiocarbonDateCarbonateSample : sample_starting_weight
 
-      RadiocarbonDate : sample_taxon_id_confidence
+      F14CRadiocarbonDateCarbonateSample : sample_taxon_id
 
-      RadiocarbonDate : sample_taxon_scientific_name
+      F14CRadiocarbonDateCarbonateSample : sample_taxon_id_confidence
 
-      RadiocarbonDate : suspected_reservoir_effect
+      F14CRadiocarbonDateCarbonateSample : sample_taxon_scientific_name
 
-      RadiocarbonDate : suspected_sample_contamination
+      F14CRadiocarbonDateCarbonateSample : suspected_reservoir_effect
 
-      RadiocarbonDate : suspected_sample_contamination_description
+      F14CRadiocarbonDateCarbonateSample : suspected_sample_contamination
+
+      F14CRadiocarbonDateCarbonateSample : suspected_sample_contamination_description
 
 
 </div>
-<!-- no inheritance hierarchy -->
+<h2 id="inheritance">Inheritance</h2>
+<ul>
+<li><a href="../Extension/">Extension</a><ul>
+<li><a href="../CarbonateSample/">CarbonateSample</a><ul>
+<li><strong>F14CRadiocarbonDateCarbonateSample</strong> [ <a href="../RadiocarbonDate/">RadiocarbonDate</a>]</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h2 id="slots">Slots</h2>
 <table>
 <thead>
@@ -401,206 +404,193 @@
 <td><a href="../lab_code/">lab_code</a></td>
 <td>1 <br/> <a href="../LabCode/">LabCode</a></td>
 <td>Unique laboratory code designation of the institution that made the measureme...</td>
-<td>direct</td>
+<td><a href="../RadiocarbonDate/">RadiocarbonDate</a></td>
 </tr>
 <tr>
 <td><a href="../lab_id/">lab_id</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>The unique identifier associated with a specific radiocarbon determination,</td>
-<td>direct</td>
+<td><a href="../RadiocarbonDate/">RadiocarbonDate</a></td>
 </tr>
 <tr>
 <td><a href="../conventional_age/">conventional_age</a></td>
 <td>0..1 <em>recommended</em> <br/> <a href="../Float/">Float</a></td>
 <td>The uncalibrated age from the laboratory measurement</td>
-<td>direct</td>
+<td><a href="../RadiocarbonDate/">RadiocarbonDate</a></td>
 </tr>
 <tr>
 <td><a href="../conventional_age_error/">conventional_age_error</a></td>
 <td>0..1 <em>recommended</em> <br/> <a href="../Float/">Float</a></td>
 <td>The 1-standard deviation around the conventional radiocarbon age (C14) measur...</td>
-<td>direct</td>
+<td><a href="../RadiocarbonDate/">RadiocarbonDate</a></td>
 </tr>
 <tr>
 <td><a href="../f14c/">f14c</a></td>
 <td>1 <br/> <a href="../Float/">Float</a></td>
 <td>The F14C value from the laboratory measurement, i</td>
-<td>direct</td>
+<td><a href="../RadiocarbonDate/">RadiocarbonDate</a></td>
 </tr>
 <tr>
 <td><a href="../f14c_error/">f14c_error</a></td>
 <td>1 <br/> <a href="../Float/">Float</a></td>
 <td>The 1-standard deviation uncertainty around the F14C (C14) measurement,</td>
-<td>direct</td>
+<td><a href="../RadiocarbonDate/">RadiocarbonDate</a></td>
 </tr>
 <tr>
 <td><a href="../delta_13_c_calculation_method/">delta_13_c_calculation_method</a></td>
 <td>0..1 <em>recommended</em> <br/> <a href="../Delta13CMeasurementMethod/">Delta13CMeasurementMethod</a></td>
 <td>Whether the radiocarbon date was calculated with an AMS derived δ13C, an IRMS...</td>
-<td>direct</td>
+<td><a href="../RadiocarbonDate/">RadiocarbonDate</a></td>
 </tr>
 <tr>
 <td><a href="../sample_ids/">sample_ids</a></td>
 <td>1..* <br/> <a href="../String/">String</a></td>
 <td>Any identifier associated with the sample under measurement</td>
-<td>direct</td>
+<td><a href="../RadiocarbonDate/">RadiocarbonDate</a></td>
 </tr>
 <tr>
 <td><a href="../sample_material/">sample_material</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Material of the sample used to extract carbon used for radiocarbon dating mea...</td>
-<td>direct</td>
+<td><a href="../RadiocarbonDate/">RadiocarbonDate</a></td>
 </tr>
 <tr>
 <td><a href="../sample_taxon_id/">sample_taxon_id</a></td>
 <td>1..* <br/> <a href="../String/">String</a></td>
 <td>A taxonomic ID of the organism from which the sample used to extract carbon u...</td>
-<td>direct</td>
+<td><a href="../RadiocarbonDate/">RadiocarbonDate</a></td>
 </tr>
 <tr>
 <td><a href="../sample_taxon_id_confidence/">sample_taxon_id_confidence</a></td>
 <td>1 <br/> <a href="../Boolean/">Boolean</a></td>
 <td>Specify the level of confidence of an exact taxon identification</td>
-<td>direct</td>
+<td><a href="../RadiocarbonDate/">RadiocarbonDate</a></td>
 </tr>
 <tr>
 <td><a href="../sample_taxon_scientific_name/">sample_taxon_scientific_name</a></td>
 <td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
 <td>A scientific name of the taxon corresponding to the taxonomic ID, or when a</td>
-<td>direct</td>
+<td><a href="../RadiocarbonDate/">RadiocarbonDate</a></td>
 </tr>
 <tr>
 <td><a href="../sample_anatomical_part/">sample_anatomical_part</a></td>
 <td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
 <td>Anatomical part from which the sample is derived</td>
-<td>direct</td>
+<td><a href="../RadiocarbonDate/">RadiocarbonDate</a></td>
 </tr>
 <tr>
 <td><a href="../suspected_sample_contamination/">suspected_sample_contamination</a></td>
 <td>0..1 <em>recommended</em> <br/> <a href="../Boolean/">Boolean</a></td>
 <td>Specify whether the sample has suspected contamination that may influence mea...</td>
-<td>direct</td>
+<td><a href="../RadiocarbonDate/">RadiocarbonDate</a></td>
 </tr>
 <tr>
 <td><a href="../suspected_sample_contamination_description/">suspected_sample_contamination_description</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>If a sample has a suspected contamination (suspected_sample_contamination), p...</td>
-<td>direct</td>
+<td><a href="../RadiocarbonDate/">RadiocarbonDate</a></td>
 </tr>
 <tr>
 <td><a href="../sample_location/">sample_location</a></td>
 <td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
 <td>Name of the geographic location from which the sample originated</td>
-<td>direct</td>
+<td><a href="../RadiocarbonDate/">RadiocarbonDate</a></td>
 </tr>
 <tr>
 <td><a href="../decimal_latitude/">decimal_latitude</a></td>
 <td>0..1 <em>recommended</em> <br/> <a href="../Float/">Float</a></td>
 <td>The geographic latitude (in decimal degrees, using the spatial reference syst...</td>
-<td>direct</td>
+<td><a href="../RadiocarbonDate/">RadiocarbonDate</a></td>
 </tr>
 <tr>
 <td><a href="../decimal_longitude/">decimal_longitude</a></td>
 <td>0..1 <em>recommended</em> <br/> <a href="../Float/">Float</a></td>
 <td>The geographic longitude (in decimal degrees, using the spatial reference sys...</td>
-<td>direct</td>
+<td><a href="../RadiocarbonDate/">RadiocarbonDate</a></td>
 </tr>
 <tr>
 <td><a href="../coordinate_precision/">coordinate_precision</a></td>
 <td>0..1 <em>recommended</em> <br/> <a href="../Float/">Float</a></td>
 <td>A decimal representation of the precision of the coordinates given in the dec...</td>
-<td>direct</td>
+<td><a href="../RadiocarbonDate/">RadiocarbonDate</a></td>
 </tr>
 <tr>
 <td><a href="../pretreatment_methods/">pretreatment_methods</a></td>
 <td>1..* <br/> <a href="../PretreatmentMethods/">PretreatmentMethods</a></td>
 <td>Specify the types of general pretreatment methods applied for decontamination</td>
-<td>direct</td>
+<td><a href="../RadiocarbonDate/">RadiocarbonDate</a></td>
 </tr>
 <tr>
 <td><a href="../pretreatment_method_description/">pretreatment_method_description</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Description of specific pretreatment method used for decontamination of sampl...</td>
-<td>direct</td>
+<td><a href="../RadiocarbonDate/">RadiocarbonDate</a></td>
 </tr>
 <tr>
 <td><a href="../pretreatment_method_protocol/">pretreatment_method_protocol</a></td>
 <td>1..* <br/> <a href="../String/">String</a></td>
 <td>A DOI, URL, or PMID to a publication describing the specific method of pretre...</td>
-<td>direct</td>
+<td><a href="../RadiocarbonDate/">RadiocarbonDate</a></td>
 </tr>
 <tr>
 <td><a href="../measurement_method/">measurement_method</a></td>
 <td>1 <br/> <a href="../RadiocarbonMeasurementMethod/">RadiocarbonMeasurementMethod</a></td>
 <td>Type of measurement method the determination was made by</td>
-<td>direct</td>
+<td><a href="../RadiocarbonDate/">RadiocarbonDate</a></td>
 </tr>
 <tr>
 <td><a href="../sample_starting_weight/">sample_starting_weight</a></td>
 <td>1 <br/> <a href="../Float/">Float</a></td>
 <td>Amount of sample material used at beginning of measurement in miligrams (mg)</td>
-<td>direct</td>
+<td><a href="../RadiocarbonDate/">RadiocarbonDate</a></td>
 </tr>
 <tr>
 <td><a href="../pretreatment_yield/">pretreatment_yield</a></td>
 <td>1 <br/> <a href="../Float/">Float</a></td>
 <td>Amount of sample remaining after pretreatment in miligrams (mg)</td>
-<td>direct</td>
+<td><a href="../RadiocarbonDate/">RadiocarbonDate</a></td>
 </tr>
 <tr>
 <td><a href="../pretreatment_proportion_yield/">pretreatment_proportion_yield</a></td>
 <td>0..1 <em>recommended</em> <br/> <a href="../Float/">Float</a></td>
 <td>Proportion of weight after pretreatment to sample starting weight represented...</td>
-<td>direct</td>
+<td><a href="../RadiocarbonDate/">RadiocarbonDate</a></td>
 </tr>
 <tr>
 <td><a href="../carbon_proportion/">carbon_proportion</a></td>
 <td>1 <br/> <a href="../Float/">Float</a></td>
 <td>Proportion of carbon in a non-proteinaceous sample used for dating (such as c...</td>
-<td>direct</td>
+<td><a href="../RadiocarbonDate/">RadiocarbonDate</a></td>
 </tr>
 <tr>
 <td><a href="../delta_13_c/">delta_13_c</a></td>
 <td>0..1 <em>recommended</em> <br/> <a href="../Float/">Float</a></td>
 <td>The delta carbon-13 value of the sample (δ13C), which is the ratio of the sta...</td>
-<td>direct</td>
+<td><a href="../RadiocarbonDate/">RadiocarbonDate</a></td>
 </tr>
 <tr>
 <td><a href="../delta_13_c_error/">delta_13_c_error</a></td>
 <td>0..1 <em>recommended</em> <br/> <a href="../Float/">Float</a></td>
 <td>The error associated with the delta carbon-13 (δ13C) value expressed (‰) nota...</td>
-<td>direct</td>
+<td><a href="../RadiocarbonDate/">RadiocarbonDate</a></td>
 </tr>
 <tr>
 <td><a href="../delta_13_c_method/">delta_13_c_method</a></td>
 <td>0..1 <em>recommended</em> <br/> <a href="../Delta13CMeasurementMethod/">Delta13CMeasurementMethod</a></td>
 <td>Which spectrophotometry method was used to measure the delta carbon-13 value,</td>
-<td>direct</td>
+<td><a href="../RadiocarbonDate/">RadiocarbonDate</a></td>
 </tr>
 <tr>
 <td><a href="../suspected_reservoir_effect/">suspected_reservoir_effect</a></td>
 <td>1 <br/> <a href="../Boolean/">Boolean</a></td>
 <td>Specify whether there is a suspected carbon reservoir effect that</td>
-<td>direct</td>
+<td><a href="../RadiocarbonDate/">RadiocarbonDate</a></td>
 </tr>
-</tbody>
-</table>
-<h2 id="usages">Usages</h2>
-<table>
-<thead>
 <tr>
-<th>used by</th>
-<th>used in</th>
-<th>type</th>
-<th>used</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="../RadiocarbonDateCollection/">RadiocarbonDateCollection</a></td>
-<td><a href="../entries/">entries</a></td>
-<td>range</td>
-<td><a href="./">RadiocarbonDate</a></td>
+<td><a href="../recrystalisation/">recrystalisation</a></td>
+<td>1 <br/> <a href="../Boolean/">Boolean</a></td>
+<td>Sample shows evidence of recrystalisation which should be accounted for durin...</td>
+<td><a href="../CarbonateSample/">CarbonateSample</a></td>
 </tr>
 </tbody>
 </table>
@@ -620,11 +610,11 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>c14:RadiocarbonDate</td>
+<td>c14:F14CRadiocarbonDateCarbonateSample</td>
 </tr>
 <tr>
 <td>native</td>
-<td>c14:RadiocarbonDate</td>
+<td>c14:F14CRadiocarbonDateCarbonateSample</td>
 </tr>
 </tbody>
 </table>
@@ -632,49 +622,26 @@
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>
 <details>
-<pre><code class="language-yaml">name: RadiocarbonDate
-description: A radiocarbon determination with associated metadata.
+<pre><code class="language-yaml">name: F14CRadiocarbonDateCarbonateSample
+description: F14C value radiocarbon date of a carbonate sample
+title: F14C value radiocarbon date (carbonate)
 from_schema: https://w3id.org/miaard/miaard-schema
-slots:
-- lab_code
-- lab_id
-- conventional_age
-- conventional_age_error
-- f14c
-- f14c_error
-- delta_13_c_calculation_method
-- sample_ids
-- sample_material
-- sample_taxon_id
-- sample_taxon_id_confidence
-- sample_taxon_scientific_name
-- sample_anatomical_part
-- suspected_sample_contamination
-- suspected_sample_contamination_description
-- sample_location
-- decimal_latitude
-- decimal_longitude
-- coordinate_precision
-- pretreatment_methods
-- pretreatment_method_description
-- pretreatment_method_protocol
-- measurement_method
-- sample_starting_weight
-- pretreatment_yield
-- pretreatment_proportion_yield
-- carbon_proportion
-- delta_13_c
-- delta_13_c_error
-- delta_13_c_method
-- suspected_reservoir_effect
+is_a: CarbonateSample
+mixins:
+- RadiocarbonDate
+class_uri: c14:F14CRadiocarbonDateCarbonateSample
 
 </code></pre>
 </details>
 <h3 id="induced">Induced</h3>
 <details>
-<pre><code class="language-yaml">name: RadiocarbonDate
-description: A radiocarbon determination with associated metadata.
+<pre><code class="language-yaml">name: F14CRadiocarbonDateCarbonateSample
+description: F14C value radiocarbon date of a carbonate sample
+title: F14C value radiocarbon date (carbonate)
 from_schema: https://w3id.org/miaard/miaard-schema
+is_a: CarbonateSample
+mixins:
+- RadiocarbonDate
 attributes:
   lab_code:
     name: lab_code
@@ -694,7 +661,7 @@ attributes:
     rank: 1000
     slot_uri: c14:000001
     alias: lab_code
-    owner: RadiocarbonDate
+    owner: F14CRadiocarbonDateCarbonateSample
     domain_of:
     - RadiocarbonDate
     slot_group: Identifier
@@ -717,7 +684,7 @@ attributes:
     rank: 1000
     slot_uri: c14:000002
     alias: lab_id
-    owner: RadiocarbonDate
+    owner: F14CRadiocarbonDateCarbonateSample
     domain_of:
     - RadiocarbonDate
     slot_group: Identifier
@@ -745,7 +712,7 @@ attributes:
     rank: 1000
     slot_uri: c14:000005
     alias: conventional_age
-    owner: RadiocarbonDate
+    owner: F14CRadiocarbonDateCarbonateSample
     domain_of:
     - RadiocarbonDate
     slot_group: Measurement
@@ -769,7 +736,7 @@ attributes:
     rank: 1000
     slot_uri: c14:000006
     alias: conventional_age_error
-    owner: RadiocarbonDate
+    owner: F14CRadiocarbonDateCarbonateSample
     domain_of:
     - RadiocarbonDate
     slot_group: Measurement
@@ -792,7 +759,7 @@ attributes:
     rank: 1000
     slot_uri: c14:000003
     alias: f14c
-    owner: RadiocarbonDate
+    owner: F14CRadiocarbonDateCarbonateSample
     domain_of:
     - RadiocarbonDate
     slot_group: Measurement
@@ -816,7 +783,7 @@ attributes:
     rank: 1000
     slot_uri: c14:000004
     alias: f14c_error
-    owner: RadiocarbonDate
+    owner: F14CRadiocarbonDateCarbonateSample
     domain_of:
     - RadiocarbonDate
     slot_group: Measurement
@@ -839,7 +806,7 @@ attributes:
     rank: 1000
     slot_uri: c14:000007
     alias: delta_13_c_calculation_method
-    owner: RadiocarbonDate
+    owner: F14CRadiocarbonDateCarbonateSample
     domain_of:
     - RadiocarbonDate
     slot_group: Measurement
@@ -866,7 +833,7 @@ attributes:
     rank: 1000
     slot_uri: c14:000008
     alias: sample_ids
-    owner: RadiocarbonDate
+    owner: F14CRadiocarbonDateCarbonateSample
     domain_of:
     - RadiocarbonDate
     slot_group: Sample
@@ -891,7 +858,7 @@ attributes:
     rank: 1000
     slot_uri: c14:000009
     alias: sample_material
-    owner: RadiocarbonDate
+    owner: F14CRadiocarbonDateCarbonateSample
     domain_of:
     - RadiocarbonDate
     slot_group: Sample
@@ -916,7 +883,7 @@ attributes:
     rank: 1000
     slot_uri: c14:000010
     alias: sample_taxon_id
-    owner: RadiocarbonDate
+    owner: F14CRadiocarbonDateCarbonateSample
     domain_of:
     - RadiocarbonDate
     slot_group: Sample
@@ -939,7 +906,7 @@ attributes:
     rank: 1000
     slot_uri: c14:000011
     alias: sample_taxon_id_confidence
-    owner: RadiocarbonDate
+    owner: F14CRadiocarbonDateCarbonateSample
     domain_of:
     - RadiocarbonDate
     slot_group: Sample
@@ -963,7 +930,7 @@ attributes:
     rank: 1000
     slot_uri: c14:000012
     alias: sample_taxon_scientific_name
-    owner: RadiocarbonDate
+    owner: F14CRadiocarbonDateCarbonateSample
     domain_of:
     - RadiocarbonDate
     slot_group: Sample
@@ -985,7 +952,7 @@ attributes:
     rank: 1000
     slot_uri: c14:000013
     alias: sample_anatomical_part
-    owner: RadiocarbonDate
+    owner: F14CRadiocarbonDateCarbonateSample
     domain_of:
     - RadiocarbonDate
     slot_group: Sample
@@ -1008,7 +975,7 @@ attributes:
     rank: 1000
     slot_uri: c14:000014
     alias: suspected_sample_contamination
-    owner: RadiocarbonDate
+    owner: F14CRadiocarbonDateCarbonateSample
     domain_of:
     - RadiocarbonDate
     slot_group: Sample
@@ -1036,7 +1003,7 @@ attributes:
     rank: 1000
     slot_uri: c14:000015
     alias: suspected_sample_contamination_description
-    owner: RadiocarbonDate
+    owner: F14CRadiocarbonDateCarbonateSample
     domain_of:
     - RadiocarbonDate
     slot_group: Sample
@@ -1056,7 +1023,7 @@ attributes:
     rank: 1000
     slot_uri: c14:000016
     alias: sample_location
-    owner: RadiocarbonDate
+    owner: F14CRadiocarbonDateCarbonateSample
     domain_of:
     - RadiocarbonDate
     slot_group: Sample
@@ -1082,7 +1049,7 @@ attributes:
     rank: 1000
     slot_uri: c14:000017
     alias: decimal_latitude
-    owner: RadiocarbonDate
+    owner: F14CRadiocarbonDateCarbonateSample
     domain_of:
     - RadiocarbonDate
     slot_group: Sample
@@ -1110,7 +1077,7 @@ attributes:
     rank: 1000
     slot_uri: c14:000018
     alias: decimal_longitude
-    owner: RadiocarbonDate
+    owner: F14CRadiocarbonDateCarbonateSample
     domain_of:
     - RadiocarbonDate
     slot_group: Sample
@@ -1135,7 +1102,7 @@ attributes:
     rank: 1000
     slot_uri: c14:000019
     alias: coordinate_precision
-    owner: RadiocarbonDate
+    owner: F14CRadiocarbonDateCarbonateSample
     domain_of:
     - RadiocarbonDate
     slot_group: Sample
@@ -1159,7 +1126,7 @@ attributes:
     rank: 1000
     slot_uri: c14:000020
     alias: pretreatment_methods
-    owner: RadiocarbonDate
+    owner: F14CRadiocarbonDateCarbonateSample
     domain_of:
     - RadiocarbonDate
     slot_group: Method
@@ -1184,7 +1151,7 @@ attributes:
     rank: 1000
     slot_uri: c14:000021
     alias: pretreatment_method_description
-    owner: RadiocarbonDate
+    owner: F14CRadiocarbonDateCarbonateSample
     domain_of:
     - RadiocarbonDate
     slot_group: Method
@@ -1205,7 +1172,7 @@ attributes:
     rank: 1000
     slot_uri: c14:000022
     alias: pretreatment_method_protocol
-    owner: RadiocarbonDate
+    owner: F14CRadiocarbonDateCarbonateSample
     domain_of:
     - RadiocarbonDate
     slot_group: Method
@@ -1225,7 +1192,7 @@ attributes:
     rank: 1000
     slot_uri: c14:000023
     alias: measurement_method
-    owner: RadiocarbonDate
+    owner: F14CRadiocarbonDateCarbonateSample
     domain_of:
     - RadiocarbonDate
     slot_group: Method
@@ -1245,7 +1212,7 @@ attributes:
     rank: 1000
     slot_uri: c14:000024
     alias: sample_starting_weight
-    owner: RadiocarbonDate
+    owner: F14CRadiocarbonDateCarbonateSample
     domain_of:
     - RadiocarbonDate
     slot_group: Quality control
@@ -1263,7 +1230,7 @@ attributes:
     rank: 1000
     slot_uri: c14:000025
     alias: pretreatment_yield
-    owner: RadiocarbonDate
+    owner: F14CRadiocarbonDateCarbonateSample
     domain_of:
     - RadiocarbonDate
     slot_group: Quality control
@@ -1284,7 +1251,7 @@ attributes:
     rank: 1000
     slot_uri: c14:000026
     alias: pretreatment_proportion_yield
-    owner: RadiocarbonDate
+    owner: F14CRadiocarbonDateCarbonateSample
     domain_of:
     - RadiocarbonDate
     slot_group: Quality control
@@ -1309,7 +1276,7 @@ attributes:
     rank: 1000
     slot_uri: c14:000027
     alias: carbon_proportion
-    owner: RadiocarbonDate
+    owner: F14CRadiocarbonDateCarbonateSample
     domain_of:
     - RadiocarbonDate
     slot_group: Quality control
@@ -1333,7 +1300,7 @@ attributes:
     rank: 1000
     slot_uri: c14:000028
     alias: delta_13_c
-    owner: RadiocarbonDate
+    owner: F14CRadiocarbonDateCarbonateSample
     domain_of:
     - RadiocarbonDate
     slot_group: Quality control
@@ -1357,7 +1324,7 @@ attributes:
     rank: 1000
     slot_uri: c14:000029
     alias: delta_13_c_error
-    owner: RadiocarbonDate
+    owner: F14CRadiocarbonDateCarbonateSample
     domain_of:
     - RadiocarbonDate
     slot_group: Quality control
@@ -1382,7 +1349,7 @@ attributes:
     rank: 1000
     slot_uri: c14:000030
     alias: delta_13_c_method
-    owner: RadiocarbonDate
+    owner: F14CRadiocarbonDateCarbonateSample
     domain_of:
     - RadiocarbonDate
     slot_group: Quality control
@@ -1403,13 +1370,33 @@ attributes:
     rank: 1000
     slot_uri: c14:000031
     alias: suspected_reservoir_effect
-    owner: RadiocarbonDate
+    owner: F14CRadiocarbonDateCarbonateSample
     domain_of:
     - RadiocarbonDate
     slot_group: Quality control
     range: boolean
     required: true
     multivalued: false
+  recrystalisation:
+    name: recrystalisation
+    description: Sample shows evidence of recrystalisation which should be accounted
+      for during analysis.
+    title: Evidence of recrystalisation
+    examples:
+    - value: 'true'
+    - value: 'false'
+    from_schema: https://w3id.org/miaard/miaard-schema
+    rank: 1000
+    slot_uri: c14:000037
+    alias: recrystalisation
+    owner: F14CRadiocarbonDateCarbonateSample
+    domain_of:
+    - CarbonateSample
+    slot_group: Quality control
+    range: boolean
+    required: true
+    multivalued: false
+class_uri: c14:F14CRadiocarbonDateCarbonateSample
 
 </code></pre>
 </details>

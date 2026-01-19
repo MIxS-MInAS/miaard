@@ -21,6 +21,14 @@
          <lastmod>2026-01-19</lastmod>
     </url>
     <url>
+         <loc>https://miaard.github.io/miaard-schema/elements/ConventionalAgeRadiocarbonDateCarbonateSample/</loc>
+         <lastmod>2026-01-19</lastmod>
+    </url>
+    <url>
+         <loc>https://miaard.github.io/miaard-schema/elements/ConventionalAgeRadiocarbonDateProteinaceousSample/</loc>
+         <lastmod>2026-01-19</lastmod>
+    </url>
+    <url>
          <loc>https://miaard.github.io/miaard-schema/elements/Curie/</loc>
          <lastmod>2026-01-19</lastmod>
     </url>
@@ -50,6 +58,14 @@
     </url>
     <url>
          <loc>https://miaard.github.io/miaard-schema/elements/Extension/</loc>
+         <lastmod>2026-01-19</lastmod>
+    </url>
+    <url>
+         <loc>https://miaard.github.io/miaard-schema/elements/F14CRadiocarbonDateCarbonateSample/</loc>
+         <lastmod>2026-01-19</lastmod>
+    </url>
+    <url>
+         <loc>https://miaard.github.io/miaard-schema/elements/F14CRadiocarbonDateProteinaceousSample/</loc>
          <lastmod>2026-01-19</lastmod>
     </url>
     <url>

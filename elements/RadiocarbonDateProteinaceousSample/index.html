@@ -422,13 +422,13 @@
 </tr>
 <tr>
 <td><a href="../conventional_age/">conventional_age</a></td>
-<td>1 <br/> <a href="../Float/">Float</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../Float/">Float</a></td>
 <td>The uncalibrated age from the laboratory measurement</td>
 <td><a href="../RadiocarbonDate/">RadiocarbonDate</a></td>
 </tr>
 <tr>
 <td><a href="../conventional_age_error/">conventional_age_error</a></td>
-<td>1 <br/> <a href="../Float/">Float</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../Float/">Float</a></td>
 <td>The 1-standard deviation around the conventional radiocarbon age (C14) measur...</td>
 <td><a href="../RadiocarbonDate/">RadiocarbonDate</a></td>
 </tr>
@@ -749,7 +749,7 @@ attributes:
     - RadiocarbonDate
     slot_group: Measurement
     range: float
-    required: true
+    recommended: true
     multivalued: false
   conventional_age_error:
     name: conventional_age_error
@@ -773,7 +773,8 @@ attributes:
     - RadiocarbonDate
     slot_group: Measurement
     range: float
-    required: true
+    required: false
+    recommended: true
     multivalued: false
   f14c:
     name: f14c

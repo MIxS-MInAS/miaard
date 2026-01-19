@@ -1722,7 +1722,7 @@ slots:
     - RadiocarbonDate
     slot_group: Measurement
     range: float
-    required: true
+    recommended: true
     multivalued: false
   conventional_age_error:
     name: conventional_age_error
@@ -1744,7 +1744,8 @@ slots:
     - RadiocarbonDate
     slot_group: Measurement
     range: float
-    required: true
+    required: false
+    recommended: true
     multivalued: false
   f14c:
     name: f14c
@@ -2550,6 +2551,130 @@ slots:
     multivalued: true
     inlined: true
     inlined_as_list: true
+  ConventionalAgeRadiocarbonDateProteinaceousSample_conventional_age:
+    name: ConventionalAgeRadiocarbonDateProteinaceousSample_conventional_age
+    definition_uri: https://w3id.org/miaard/miaard-schema/conventional_age
+    description: 'The uncalibrated age from the laboratory measurement. Also known
+      as the
+
+      conventional radiocarbon age (CRA). Should be a conventional 14C age (i.e.,
+      14C year BP)
+
+      NOT in AD/BC format. This is typically the ''raw'' age reported by the radiocarbon
+      lab, in
+
+      Before Present (BP) notation.'
+    title: Conventional radiocarbon age
+    examples:
+    - value: '4500'
+    - value: '37330'
+    from_schema: https://w3id.org/miaard/miaard-schema
+    mappings:
+    - c14:000005
+    is_a: conventional_age
+    domain: ConventionalAgeRadiocarbonDateProteinaceousSample
+    slot_uri: c14:000005
+    alias: conventional_age
+    owner: ConventionalAgeRadiocarbonDateProteinaceousSample
+    domain_of:
+    - ConventionalAgeRadiocarbonDateProteinaceousSample
+    is_usage_slot: true
+    usage_slot_name: conventional_age
+    slot_group: Measurement
+    range: float
+    required: true
+    recommended: true
+    multivalued: false
+  ConventionalAgeRadiocarbonDateProteinaceousSample_conventional_age_error:
+    name: ConventionalAgeRadiocarbonDateProteinaceousSample_conventional_age_error
+    definition_uri: https://w3id.org/miaard/miaard-schema/conventional_age_error
+    description: "The 1-standard deviation around the conventional radiocarbon age\
+      \ (C14) measurement,\nnormally indicated as a \xB1 after the main age. Must\
+      \ be in the same format (i.e. 14C yr BP).\nSometimes referred to as the \"error\"\
+      \ or \"sigma\" of the measurement."
+    title: Conventional radiocarbon age error
+    examples:
+    - value: '25'
+    - value: '620'
+    from_schema: https://w3id.org/miaard/miaard-schema
+    mappings:
+    - c14:000006
+    is_a: conventional_age_error
+    domain: ConventionalAgeRadiocarbonDateProteinaceousSample
+    slot_uri: c14:000006
+    alias: conventional_age_error
+    owner: ConventionalAgeRadiocarbonDateProteinaceousSample
+    domain_of:
+    - ConventionalAgeRadiocarbonDateProteinaceousSample
+    is_usage_slot: true
+    usage_slot_name: conventional_age_error
+    slot_group: Measurement
+    range: float
+    required: true
+    recommended: true
+    multivalued: false
+  ConventionalAgeRadiocarbonDateCarbonateSample_conventional_age:
+    name: ConventionalAgeRadiocarbonDateCarbonateSample_conventional_age
+    definition_uri: https://w3id.org/miaard/miaard-schema/conventional_age
+    description: 'The uncalibrated age from the laboratory measurement. Also known
+      as the
+
+      conventional radiocarbon age (CRA). Should be a conventional 14C age (i.e.,
+      14C year BP)
+
+      NOT in AD/BC format. This is typically the ''raw'' age reported by the radiocarbon
+      lab, in
+
+      Before Present (BP) notation.'
+    title: Conventional radiocarbon age
+    examples:
+    - value: '4500'
+    - value: '37330'
+    from_schema: https://w3id.org/miaard/miaard-schema
+    mappings:
+    - c14:000005
+    is_a: conventional_age
+    domain: ConventionalAgeRadiocarbonDateCarbonateSample
+    slot_uri: c14:000005
+    alias: conventional_age
+    owner: ConventionalAgeRadiocarbonDateCarbonateSample
+    domain_of:
+    - ConventionalAgeRadiocarbonDateCarbonateSample
+    is_usage_slot: true
+    usage_slot_name: conventional_age
+    slot_group: Measurement
+    range: float
+    required: true
+    recommended: true
+    multivalued: false
+  ConventionalAgeRadiocarbonDateCarbonateSample_conventional_age_error:
+    name: ConventionalAgeRadiocarbonDateCarbonateSample_conventional_age_error
+    definition_uri: https://w3id.org/miaard/miaard-schema/conventional_age_error
+    description: "The 1-standard deviation around the conventional radiocarbon age\
+      \ (C14) measurement,\nnormally indicated as a \xB1 after the main age. Must\
+      \ be in the same format (i.e. 14C yr BP).\nSometimes referred to as the \"error\"\
+      \ or \"sigma\" of the measurement."
+    title: Conventional radiocarbon age error
+    examples:
+    - value: '25'
+    - value: '620'
+    from_schema: https://w3id.org/miaard/miaard-schema
+    mappings:
+    - c14:000006
+    is_a: conventional_age_error
+    domain: ConventionalAgeRadiocarbonDateCarbonateSample
+    slot_uri: c14:000006
+    alias: conventional_age_error
+    owner: ConventionalAgeRadiocarbonDateCarbonateSample
+    domain_of:
+    - ConventionalAgeRadiocarbonDateCarbonateSample
+    is_usage_slot: true
+    usage_slot_name: conventional_age_error
+    slot_group: Measurement
+    range: float
+    required: true
+    recommended: true
+    multivalued: false
 classes:
   RadiocarbonDate:
     name: RadiocarbonDate
@@ -2733,9 +2858,211 @@ classes:
     - delta_13_c_method
     - suspected_reservoir_effect
     class_uri: c14:RadiocarbonDateCarbonateSample
+  F14CRadiocarbonDateProteinaceousSample:
+    name: F14CRadiocarbonDateProteinaceousSample
+    definition_uri: https://w3id.org/miaard/miaard-schema/F14CRadiocarbonDateProteinaceousSample
+    description: F14C value radiocarbon date of a proteinaceous sample
+    title: F14C value radiocarbon date (proteinaceous)
+    from_schema: https://w3id.org/miaard/miaard-schema
+    mappings:
+    - c14:F14CRadiocarbonDateProteinaceousSample
+    is_a: ProteinaceousSample
+    mixins:
+    - RadiocarbonDate
+    slots:
+    - carbon_nitro_ratio
+    - delta_15_n
+    - delta_15_n_error
+    - delta_34_s
+    - delta_34_s_error
+    - lab_code
+    - lab_id
+    - conventional_age
+    - conventional_age_error
+    - f14c
+    - f14c_error
+    - delta_13_c_calculation_method
+    - sample_ids
+    - sample_material
+    - sample_taxon_id
+    - sample_taxon_id_confidence
+    - sample_taxon_scientific_name
+    - sample_anatomical_part
+    - suspected_sample_contamination
+    - suspected_sample_contamination_description
+    - sample_location
+    - decimal_latitude
+    - decimal_longitude
+    - coordinate_precision
+    - pretreatment_methods
+    - pretreatment_method_description
+    - pretreatment_method_protocol
+    - measurement_method
+    - sample_starting_weight
+    - pretreatment_yield
+    - pretreatment_proportion_yield
+    - carbon_proportion
+    - delta_13_c
+    - delta_13_c_error
+    - delta_13_c_method
+    - suspected_reservoir_effect
+    class_uri: c14:F14CRadiocarbonDateProteinaceousSample
+  F14CRadiocarbonDateCarbonateSample:
+    name: F14CRadiocarbonDateCarbonateSample
+    definition_uri: https://w3id.org/miaard/miaard-schema/F14CRadiocarbonDateCarbonateSample
+    description: F14C value radiocarbon date of a carbonate sample
+    title: F14C value radiocarbon date (carbonate)
+    from_schema: https://w3id.org/miaard/miaard-schema
+    mappings:
+    - c14:F14CRadiocarbonDateCarbonateSample
+    is_a: CarbonateSample
+    mixins:
+    - RadiocarbonDate
+    slots:
+    - recrystalisation
+    - lab_code
+    - lab_id
+    - conventional_age
+    - conventional_age_error
+    - f14c
+    - f14c_error
+    - delta_13_c_calculation_method
+    - sample_ids
+    - sample_material
+    - sample_taxon_id
+    - sample_taxon_id_confidence
+    - sample_taxon_scientific_name
+    - sample_anatomical_part
+    - suspected_sample_contamination
+    - suspected_sample_contamination_description
+    - sample_location
+    - decimal_latitude
+    - decimal_longitude
+    - coordinate_precision
+    - pretreatment_methods
+    - pretreatment_method_description
+    - pretreatment_method_protocol
+    - measurement_method
+    - sample_starting_weight
+    - pretreatment_yield
+    - pretreatment_proportion_yield
+    - carbon_proportion
+    - delta_13_c
+    - delta_13_c_error
+    - delta_13_c_method
+    - suspected_reservoir_effect
+    class_uri: c14:F14CRadiocarbonDateCarbonateSample
+  ConventionalAgeRadiocarbonDateProteinaceousSample:
+    name: ConventionalAgeRadiocarbonDateProteinaceousSample
+    definition_uri: https://w3id.org/miaard/miaard-schema/ConventionalAgeRadiocarbonDateProteinaceousSample
+    description: Conventional age radiocarbon date of a proteinaceous sample
+    title: Conventional age radiocarbon date (proteinaceous)
+    from_schema: https://w3id.org/miaard/miaard-schema
+    mappings:
+    - c14:ConventionalAgeRadiocarbonDateProteinaceousSample
+    is_a: ProteinaceousSample
+    mixins:
+    - RadiocarbonDate
+    slots:
+    - carbon_nitro_ratio
+    - delta_15_n
+    - delta_15_n_error
+    - delta_34_s
+    - delta_34_s_error
+    - ConventionalAgeRadiocarbonDateProteinaceousSample_conventional_age
+    - ConventionalAgeRadiocarbonDateProteinaceousSample_conventional_age_error
+    - lab_code
+    - lab_id
+    - f14c
+    - f14c_error
+    - delta_13_c_calculation_method
+    - sample_ids
+    - sample_material
+    - sample_taxon_id
+    - sample_taxon_id_confidence
+    - sample_taxon_scientific_name
+    - sample_anatomical_part
+    - suspected_sample_contamination
+    - suspected_sample_contamination_description
+    - sample_location
+    - decimal_latitude
+    - decimal_longitude
+    - coordinate_precision
+    - pretreatment_methods
+    - pretreatment_method_description
+    - pretreatment_method_protocol
+    - measurement_method
+    - sample_starting_weight
+    - pretreatment_yield
+    - pretreatment_proportion_yield
+    - carbon_proportion
+    - delta_13_c
+    - delta_13_c_error
+    - delta_13_c_method
+    - suspected_reservoir_effect
+    slot_usage:
+      conventional_age:
+        name: conventional_age
+        required: true
+      conventional_age_error:
+        name: conventional_age_error
+        required: true
+    class_uri: c14:ConventionalAgeRadiocarbonDateProteinaceousSample
+  ConventionalAgeRadiocarbonDateCarbonateSample:
+    name: ConventionalAgeRadiocarbonDateCarbonateSample
+    definition_uri: https://w3id.org/miaard/miaard-schema/ConventionalAgeRadiocarbonDateCarbonateSample
+    description: Conventional age radiocarbon date of a carbonate sample
+    title: Conventional age radiocarbon date (carbonate)
+    from_schema: https://w3id.org/miaard/miaard-schema
+    mappings:
+    - c14:ConventionalAgeRadiocarbonDateCarbonateSample
+    is_a: CarbonateSample
+    mixins:
+    - RadiocarbonDate
+    slots:
+    - recrystalisation
+    - ConventionalAgeRadiocarbonDateCarbonateSample_conventional_age
+    - ConventionalAgeRadiocarbonDateCarbonateSample_conventional_age_error
+    - lab_code
+    - lab_id
+    - f14c
+    - f14c_error
+    - delta_13_c_calculation_method
+    - sample_ids
+    - sample_material
+    - sample_taxon_id
+    - sample_taxon_id_confidence
+    - sample_taxon_scientific_name
+    - sample_anatomical_part
+    - suspected_sample_contamination
+    - suspected_sample_contamination_description
+    - sample_location
+    - decimal_latitude
+    - decimal_longitude
+    - coordinate_precision
+    - pretreatment_methods
+    - pretreatment_method_description
+    - pretreatment_method_protocol
+    - measurement_method
+    - sample_starting_weight
+    - pretreatment_yield
+    - pretreatment_proportion_yield
+    - carbon_proportion
+    - delta_13_c
+    - delta_13_c_error
+    - delta_13_c_method
+    - suspected_reservoir_effect
+    slot_usage:
+      conventional_age:
+        name: conventional_age
+        required: true
+      conventional_age_error:
+        name: conventional_age_error
+        required: true
+    class_uri: c14:ConventionalAgeRadiocarbonDateCarbonateSample
 metamodel_version: 1.7.0
 source_file: c14.yaml
-source_file_date: '2026-01-19T09:21:56'
-source_file_size: 22344
-generation_date: '2026-01-19T09:22:04'
+source_file_date: '2026-01-19T09:27:48'
+source_file_size: 23802
+generation_date: '2026-01-19T09:27:57'
 
