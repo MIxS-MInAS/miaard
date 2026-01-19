@@ -1754,6 +1754,7 @@ slots:
 
       For older determinations, generally equivalent to "percent modern" (pMC, or
       pM) divided by 100.'
+    title: F14C radiocarbon value
     examples:
     - value: '0.83756'
     - value: '0.5371'
@@ -1794,9 +1795,9 @@ slots:
   delta_13_c_calculation_method:
     name: delta_13_c_calculation_method
     definition_uri: https://w3id.org/miaard/miaard-schema/delta_13_c_calculation_method
-    description: "Was the radiocarbon date calculated with an AMS derived \u03B413C,\
-      \ an IRMS derived \u03B413C,\nan alternative \u03B413C measurement method or\
-      \ an assumed \u03B413C"
+    description: "Whether the radiocarbon date was calculated with an AMS derived\
+      \ \u03B413C, an IRMS derived \u03B413C,\nan alternative \u03B413C measurement\
+      \ method or an assumed \u03B413C."
     title: Delta 13C age calculation method
     examples:
     - value: AMS
@@ -1900,10 +1901,10 @@ slots:
     definition_uri: https://w3id.org/miaard/miaard-schema/sample_taxon_id_confidence
     description: 'Specify the level of confidence of an exact taxon identification.
 
-      If secure identification, indicate TRUE, if identification is unclear or
+      If secure identification, indicate ''true'', if identification is unclear or
 
-      uncertain specify FALSE.'
-    title: Confidence of taxon assignment
+      uncertain specify ''false''.'
+    title: Confident in taxon assignment
     examples:
     - value: 'true'
     - value: 'false'
@@ -1949,7 +1950,7 @@ slots:
     name: sample_anatomical_part
     definition_uri: https://w3id.org/miaard/miaard-schema/sample_anatomical_part
     description: Anatomical part from which the sample is derived.
-    title: Anatomical part from which the sample is derived.
+    title: Anatomical part from which the sample is derived
     examples:
     - value: UBERON:0000981
     - value: PO:0009010
@@ -1974,8 +1975,8 @@ slots:
     description: 'Specify whether the sample has suspected contamination that may
       influence measurement
 
-      (organic glue, consolidant, rootlets, embalming solution, staining etc.)'
-    title: Suspected sample contamination.
+      (organic glue, consolidant, rootlets, embalming solution, staining etc.).'
+    title: Suspected sample contamination
     examples:
     - value: 'true'
     - value: 'false'
@@ -2024,7 +2025,7 @@ slots:
   sample_location:
     name: sample_location
     definition_uri: https://w3id.org/miaard/miaard-schema/sample_location
-    description: Name of location from which the sample originated
+    description: Name of the geographic location from which the sample originated.
     title: Sample location
     examples:
     - value: ''
@@ -2219,8 +2220,8 @@ slots:
   sample_starting_weight:
     name: sample_starting_weight
     definition_uri: https://w3id.org/miaard/miaard-schema/sample_starting_weight
-    description: Amount of sample material used at beginning of  in measurement in
-      mg.
+    description: Amount of sample material used at beginning of measurement in miligrams
+      (mg).
     title: Sample starting weight
     examples:
     - value: '521'
@@ -2240,7 +2241,7 @@ slots:
   pretreatment_yield:
     name: pretreatment_yield
     definition_uri: https://w3id.org/miaard/miaard-schema/pretreatment_yield
-    description: Amount of sample remaining after pretreatment in mg
+    description: Amount of sample remaining after pretreatment in miligrams (mg).
     title: Weight after pretreatment
     examples:
     - value: '22'
@@ -2256,11 +2257,12 @@ slots:
     range: float
     required: true
     multivalued: false
-  pretreatment_percentage_yield:
-    name: pretreatment_percentage_yield
-    definition_uri: https://w3id.org/miaard/miaard-schema/pretreatment_percentage_yield
-    description: Ratio of weight after pretreatment to sample starting weight
-    title: Percentage yield after pretreatment
+  pretreatment_proportion_yield:
+    name: pretreatment_proportion_yield
+    definition_uri: https://w3id.org/miaard/miaard-schema/pretreatment_proportion_yield
+    description: Proportion of weight after pretreatment to sample starting weight
+      represented as a value between 0 and 1.
+    title: Proportion yield after pretreatment
     examples:
     - value: '012'
     - value: '0.61'
@@ -2580,7 +2582,7 @@ classes:
     - measurement_method
     - sample_starting_weight
     - pretreatment_yield
-    - pretreatment_percentage_yield
+    - pretreatment_proportion_yield
     - carbon_proportion
     - delta_13_c
     - delta_13_c_error
@@ -2606,13 +2608,13 @@ classes:
   Extension:
     name: Extension
     definition_uri: https://w3id.org/miaard/miaard-schema/Extension
-    description: A collection of recommended metadata terms for a specific context
+    description: A collection of recommended metadata terms for a specific context.
     from_schema: https://w3id.org/miaard/miaard-schema
     class_uri: c14:Extension
   ProteinaceousSample:
     name: ProteinaceousSample
     definition_uri: https://w3id.org/miaard/miaard-schema/ProteinaceousSample
-    description: Terms specific to proteinaceous samples being dated
+    description: Terms specific to proteinaceous samples being dated.
     title: Proteinaceous Sample
     from_schema: https://w3id.org/miaard/miaard-schema
     mappings:
@@ -2628,7 +2630,7 @@ classes:
   CarbonateSample:
     name: CarbonateSample
     definition_uri: https://w3id.org/miaard/miaard-schema/CarbonateSample
-    description: Terms specific to carbonate samples being dated
+    description: Terms specific to carbonate samples being dated.
     title: Carbonate Sample
     from_schema: https://w3id.org/miaard/miaard-schema
     mappings:
@@ -2640,7 +2642,7 @@ classes:
   RadiocarbonDateProteinaceousSample:
     name: RadiocarbonDateProteinaceousSample
     definition_uri: https://w3id.org/miaard/miaard-schema/RadiocarbonDateProteinaceousSample
-    description: A radiocarbon determination on a proteinaceous sample
+    description: A radiocarbon determination on a proteinaceous sample.
     title: Radiocarbon Date (Proteinaceous Sample)
     from_schema: https://w3id.org/miaard/miaard-schema
     mappings:
@@ -2679,7 +2681,7 @@ classes:
     - measurement_method
     - sample_starting_weight
     - pretreatment_yield
-    - pretreatment_percentage_yield
+    - pretreatment_proportion_yield
     - carbon_proportion
     - delta_13_c
     - delta_13_c_error
@@ -2689,7 +2691,7 @@ classes:
   RadiocarbonDateCarbonateSample:
     name: RadiocarbonDateCarbonateSample
     definition_uri: https://w3id.org/miaard/miaard-schema/RadiocarbonDateCarbonateSample
-    description: A radiocarbon determination on a carbonate sample
+    description: A radiocarbon determination on a carbonate sample.
     title: Radiocarbon Date (Carbonate Sample)
     from_schema: https://w3id.org/miaard/miaard-schema
     mappings:
@@ -2724,7 +2726,7 @@ classes:
     - measurement_method
     - sample_starting_weight
     - pretreatment_yield
-    - pretreatment_percentage_yield
+    - pretreatment_proportion_yield
     - carbon_proportion
     - delta_13_c
     - delta_13_c_error
@@ -2733,7 +2735,7 @@ classes:
     class_uri: c14:RadiocarbonDateCarbonateSample
 metamodel_version: 1.7.0
 source_file: c14.yaml
-source_file_date: '2026-01-19T09:17:12'
-source_file_size: 22223
-generation_date: '2026-01-19T09:17:23'
+source_file_date: '2026-01-19T09:21:56'
+source_file_size: 22344
+generation_date: '2026-01-19T09:22:04'
 

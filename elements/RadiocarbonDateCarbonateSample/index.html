@@ -258,7 +258,7 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="class-radiocarbon-date-carbonate-sample-radiocarbondatecarbonatesample">Class: Radiocarbon Date (Carbonate Sample) (RadiocarbonDateCarbonateSample)</h1>
-<p><em>A radiocarbon determination on a carbonate sample</em></p>
+<p><em>A radiocarbon determination on a carbonate sample.</em></p>
 <p>URI: <a href="https://w3id.org/miaard/miaard-schema/RadiocarbonDateCarbonateSample">c14:RadiocarbonDateCarbonateSample</a></p>
 <div class="mermaid"> classDiagram
     class RadiocarbonDateCarbonateSample
@@ -349,7 +349,7 @@
 
 
 
-      RadiocarbonDateCarbonateSample : pretreatment_percentage_yield
+      RadiocarbonDateCarbonateSample : pretreatment_proportion_yield
 
       RadiocarbonDateCarbonateSample : pretreatment_yield
 
@@ -439,7 +439,7 @@
 <tr>
 <td><a href="../delta_13_c_calculation_method/">delta_13_c_calculation_method</a></td>
 <td>0..1 <em>recommended</em> <br/> <a href="../Delta13CMeasurementMethod/">Delta13CMeasurementMethod</a></td>
-<td>Was the radiocarbon date calculated with an AMS derived δ13C, an IRMS derived...</td>
+<td>Whether the radiocarbon date was calculated with an AMS derived δ13C, an IRMS...</td>
 <td><a href="../RadiocarbonDate/">RadiocarbonDate</a></td>
 </tr>
 <tr>
@@ -493,7 +493,7 @@
 <tr>
 <td><a href="../sample_location/">sample_location</a></td>
 <td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
-<td>Name of location from which the sample originated</td>
+<td>Name of the geographic location from which the sample originated</td>
 <td><a href="../RadiocarbonDate/">RadiocarbonDate</a></td>
 </tr>
 <tr>
@@ -541,19 +541,19 @@
 <tr>
 <td><a href="../sample_starting_weight/">sample_starting_weight</a></td>
 <td>1 <br/> <a href="../Float/">Float</a></td>
-<td>Amount of sample material used at beginning of  in measurement in mg</td>
+<td>Amount of sample material used at beginning of measurement in miligrams (mg)</td>
 <td><a href="../RadiocarbonDate/">RadiocarbonDate</a></td>
 </tr>
 <tr>
 <td><a href="../pretreatment_yield/">pretreatment_yield</a></td>
 <td>1 <br/> <a href="../Float/">Float</a></td>
-<td>Amount of sample remaining after pretreatment in mg</td>
+<td>Amount of sample remaining after pretreatment in miligrams (mg)</td>
 <td><a href="../RadiocarbonDate/">RadiocarbonDate</a></td>
 </tr>
 <tr>
-<td><a href="../pretreatment_percentage_yield/">pretreatment_percentage_yield</a></td>
+<td><a href="../pretreatment_proportion_yield/">pretreatment_proportion_yield</a></td>
 <td>0..1 <em>recommended</em> <br/> <a href="../Float/">Float</a></td>
-<td>Ratio of weight after pretreatment to sample starting weight</td>
+<td>Proportion of weight after pretreatment to sample starting weight represented...</td>
 <td><a href="../RadiocarbonDate/">RadiocarbonDate</a></td>
 </tr>
 <tr>
@@ -623,7 +623,7 @@
 <h3 id="direct">Direct</h3>
 <details>
 <pre><code class="language-yaml">name: RadiocarbonDateCarbonateSample
-description: A radiocarbon determination on a carbonate sample
+description: A radiocarbon determination on a carbonate sample.
 title: Radiocarbon Date (Carbonate Sample)
 from_schema: https://w3id.org/miaard/miaard-schema
 is_a: CarbonateSample
@@ -636,7 +636,7 @@ class_uri: c14:RadiocarbonDateCarbonateSample
 <h3 id="induced">Induced</h3>
 <details>
 <pre><code class="language-yaml">name: RadiocarbonDateCarbonateSample
-description: A radiocarbon determination on a carbonate sample
+description: A radiocarbon determination on a carbonate sample.
 title: Radiocarbon Date (Carbonate Sample)
 from_schema: https://w3id.org/miaard/miaard-schema
 is_a: CarbonateSample
@@ -750,6 +750,7 @@ attributes:
 
       For older determinations, generally equivalent to "percent modern" (pMC, or
       pM) divided by 100.'
+    title: F14C radiocarbon value
     examples:
     - value: '0.83756'
     - value: '0.5371'
@@ -790,10 +791,10 @@ attributes:
     multivalued: false
   delta_13_c_calculation_method:
     name: delta_13_c_calculation_method
-    description: 'Was the radiocarbon date calculated with an AMS derived δ13C, an
-      IRMS derived δ13C,
+    description: 'Whether the radiocarbon date was calculated with an AMS derived
+      δ13C, an IRMS derived δ13C,
 
-      an alternative δ13C measurement method or an assumed δ13C'
+      an alternative δ13C measurement method or an assumed δ13C.'
     title: Delta 13C age calculation method
     examples:
     - value: AMS
@@ -893,10 +894,10 @@ attributes:
     name: sample_taxon_id_confidence
     description: 'Specify the level of confidence of an exact taxon identification.
 
-      If secure identification, indicate TRUE, if identification is unclear or
+      If secure identification, indicate ''true'', if identification is unclear or
 
-      uncertain specify FALSE.'
-    title: Confidence of taxon assignment
+      uncertain specify ''false''.'
+    title: Confident in taxon assignment
     examples:
     - value: 'true'
     - value: 'false'
@@ -940,7 +941,7 @@ attributes:
   sample_anatomical_part:
     name: sample_anatomical_part
     description: Anatomical part from which the sample is derived.
-    title: Anatomical part from which the sample is derived.
+    title: Anatomical part from which the sample is derived
     examples:
     - value: UBERON:0000981
     - value: PO:0009010
@@ -964,8 +965,8 @@ attributes:
     description: 'Specify whether the sample has suspected contamination that may
       influence measurement
 
-      (organic glue, consolidant, rootlets, embalming solution, staining etc.)'
-    title: Suspected sample contamination.
+      (organic glue, consolidant, rootlets, embalming solution, staining etc.).'
+    title: Suspected sample contamination
     examples:
     - value: 'true'
     - value: 'false'
@@ -1012,7 +1013,7 @@ attributes:
     pattern: ''
   sample_location:
     name: sample_location
-    description: Name of location from which the sample originated
+    description: Name of the geographic location from which the sample originated.
     title: Sample location
     examples:
     - value: ''
@@ -1199,8 +1200,8 @@ attributes:
     multivalued: false
   sample_starting_weight:
     name: sample_starting_weight
-    description: Amount of sample material used at beginning of  in measurement in
-      mg.
+    description: Amount of sample material used at beginning of measurement in miligrams
+      (mg).
     title: Sample starting weight
     examples:
     - value: '521'
@@ -1219,7 +1220,7 @@ attributes:
     multivalued: false
   pretreatment_yield:
     name: pretreatment_yield
-    description: Amount of sample remaining after pretreatment in mg
+    description: Amount of sample remaining after pretreatment in miligrams (mg).
     title: Weight after pretreatment
     examples:
     - value: '22'
@@ -1235,10 +1236,11 @@ attributes:
     range: float
     required: true
     multivalued: false
-  pretreatment_percentage_yield:
-    name: pretreatment_percentage_yield
-    description: Ratio of weight after pretreatment to sample starting weight
-    title: Percentage yield after pretreatment
+  pretreatment_proportion_yield:
+    name: pretreatment_proportion_yield
+    description: Proportion of weight after pretreatment to sample starting weight
+      represented as a value between 0 and 1.
+    title: Proportion yield after pretreatment
     examples:
     - value: '012'
     - value: '0.61'
@@ -1247,7 +1249,7 @@ attributes:
     from_schema: https://w3id.org/miaard/miaard-schema
     rank: 1000
     slot_uri: c14:000026
-    alias: pretreatment_percentage_yield
+    alias: pretreatment_proportion_yield
     owner: RadiocarbonDateCarbonateSample
     domain_of:
     - RadiocarbonDate

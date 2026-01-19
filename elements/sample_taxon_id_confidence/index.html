@@ -21,7 +21,7 @@
     
     
       
-        <title>Slot: Confidence of taxon assignment (sample_taxon_id_confidence) - Minimum Information about any Radiocarbon Dertermination (MIaaRD)</title>
+        <title>Slot: Confident in taxon assignment (sample_taxon_id_confidence) - Minimum Information about any Radiocarbon Dertermination (MIaaRD)</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-confidence-of-taxon-assignment-sample_taxon_id_confidence" class="md-skip">
+        <a href="#slot-confident-in-taxon-assignment-sample_taxon_id_confidence" class="md-skip">
           Skip to content
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: Confidence of taxon assignment (sample_taxon_id_confidence)
+              Slot: Confident in taxon assignment (sample_taxon_id_confidence)
             
           </span>
         </div>
@@ -427,10 +427,10 @@
   
 
 
-<h1 id="slot-confidence-of-taxon-assignment-sample_taxon_id_confidence">Slot: Confidence of taxon assignment (sample_taxon_id_confidence)</h1>
+<h1 id="slot-confident-in-taxon-assignment-sample_taxon_id_confidence">Slot: Confident in taxon assignment (sample_taxon_id_confidence)</h1>
 <p><em>Specify the level of confidence of an exact taxon identification.</em></p>
-<p><em>If secure identification, indicate TRUE, if identification is unclear or</em></p>
-<p><em>uncertain specify FALSE.</em></p>
+<p><em>If secure identification, indicate 'true', if identification is unclear or</em></p>
+<p><em>uncertain specify 'false'.</em></p>
 <p>URI: <a href="https://w3id.org/miaard/miaard-schema/000011">c14:000011</a>
 Alias: sample_taxon_id_confidence</p>
 <!-- no inheritance hierarchy -->
@@ -446,11 +446,6 @@ Alias: sample_taxon_id_confidence</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="../RadiocarbonDateProteinaceousSample/">RadiocarbonDateProteinaceousSample</a></td>
-<td>A radiocarbon determination on a proteinaceous sample</td>
-<td>no</td>
-</tr>
-<tr>
 <td><a href="../RadiocarbonDate/">RadiocarbonDate</a></td>
 <td>A radiocarbon determination with associated metadata</td>
 <td>no</td>
@@ -458,6 +453,11 @@ Alias: sample_taxon_id_confidence</p>
 <tr>
 <td><a href="../RadiocarbonDateCarbonateSample/">RadiocarbonDateCarbonateSample</a></td>
 <td>A radiocarbon determination on a carbonate sample</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../RadiocarbonDateProteinaceousSample/">RadiocarbonDateProteinaceousSample</a></td>
+<td>A radiocarbon determination on a proteinaceous sample</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -517,10 +517,10 @@ Alias: sample_taxon_id_confidence</p>
 <pre><code class="language-yaml">name: sample_taxon_id_confidence
 description: 'Specify the level of confidence of an exact taxon identification.
 
-  If secure identification, indicate TRUE, if identification is unclear or
+  If secure identification, indicate ''true'', if identification is unclear or
 
-  uncertain specify FALSE.'
-title: Confidence of taxon assignment
+  uncertain specify ''false''.'
+title: Confident in taxon assignment
 examples:
 - value: 'true'
 - value: 'false'
