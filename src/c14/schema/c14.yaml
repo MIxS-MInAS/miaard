@@ -294,12 +294,10 @@ slots:
   sample_material:
     title: Radiocarbon dating sample material
     examples:
-      - value: "UBERON:0002481"
       - value: "ENVO:01000560"
     description: |-
       Material of the sample used to extract carbon used for radiocarbon dating measurements.
-      Use ontology terms where possible, e.g. from UBERON for anatomical parts, or ENVO for other
-      organic samples.
+      Use ontology terms where possible, e.g. ENVO.
     slot_uri: c14:000009
     multivalued: false
     range: string
