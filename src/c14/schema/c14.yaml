@@ -238,7 +238,6 @@ slots:
     multivalued: false
     range: float
     minimum_value: 0
-    maximum_value: 1
     required: true
     slot_group: "Measurement"
   f14c_error:
