@@ -3,7 +3,7 @@
 lab_code: mams
 lab_id: "81038"
 f14c: 0.573350252170459
-f14c_error: 0.00137336054487434
+f14c_uncertainty: 0.00137336054487434
 sample_ids:
   - "PZN009.A"
 sample_material: "UBERON:0002481"

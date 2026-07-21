@@ -21,6 +21,8 @@ imports:
   - enums/pretreatment_methods
   - enums/radiocarbon_measurement_methods
   - enums/delta13c_measurement_methods
+  - enums/carbonate_detection_methods
+  - enums/reservoir_effect_types
 
 # STRUCTURED PATTERNS
 ## syntax: ^{PMID}|{DOI}|{URL}$: ^(PMID:\d+|https:\/\/doi\.org\/10\.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*))$
@@ -41,11 +43,12 @@ classes:
       - lab_code
       - lab_id
       - conventional_age
-      - conventional_age_error
+      - conventional_age_uncertainty
       - f14c
-      - f14c_error
+      - f14c_uncertainty
       - delta_13_c_calculation_method
       - sample_ids
+      - sample_object
       - sample_material
       - sample_taxon_id
       - sample_taxon_id_confidence
@@ -66,9 +69,10 @@ classes:
       - pretreatment_proportion_yield
       - carbon_proportion
       - delta_13_c
-      - delta_13_c_error
+      - delta_13_c_uncertainty
       - delta_13_c_method
       - suspected_reservoir_effect
+      - suspected_reservoir_effect_type
 
   RadiocarbonDateCollection:
     tree_root: true
@@ -90,11 +94,12 @@ classes:
     is_a: Extension
     class_uri: c14:ProteinaceousSample
     slots:
+      - nitrogen_proportion # Proteinaceous module
       - carbon_nitro_ratio # Proteinaceous module
       - delta_15_n # Proteinaceous module
-      - delta_15_n_error # Proteinaceous module
+      - delta_15_n_uncertainty # Proteinaceous module
       - delta_34_s # Proteinaceous module
-      - delta_34_s_error # Proteinaceous module
+      - delta_34_s_uncertainty # Proteinaceous module
 
   CarbonateSample:
     description: Terms specific to carbonate samples being dated.
@@ -103,6 +108,9 @@ classes:
     class_uri: c14:CarbonateSample
     slots:
       - recrystalisation # Carbonate module
+      - secondary_carbonate_assessed # Carbonate module
+      - secondary_carbonate_detected # Carbonate module
+      - secondary_carbonate_detection_method # Carbonate module
 
   RadiocarbonDateProteinaceousSample:
     description: A radiocarbon determination on a proteinaceous sample.
@@ -146,7 +154,7 @@ classes:
     slot_usage:
       conventional_age:
         required: true
-      conventional_age_error:
+      conventional_age_uncertainty:
         required: true
 
   ConventionalAgeRadiocarbonDateCarbonateSample:
@@ -159,7 +167,7 @@ classes:
     slot_usage:
       conventional_age:
         required: true
-      conventional_age_error:
+      conventional_age_uncertainty:
         required: true
 
 slots:
@@ -211,15 +219,15 @@ slots:
     range: float
     recommended: true
     slot_group: "Measurement"
-  conventional_age_error:
-    title: Conventional radiocarbon age error
+  conventional_age_uncertainty:
+    title: Conventional radiocarbon age uncertainty
     examples:
       - value: "25"
       - value: "620"
     description: |-
       The 1-standard deviation around the conventional radiocarbon age (C14) measurement,
       normally indicated as a ± after the main age. Must be in the same format (i.e. 14C yr BP).
-      Sometimes referred to as the "error" or "sigma" of the measurement.
+      Sometimes referred to as the "uncertainty" or "sigma" of the measurement.
     slot_uri: c14:000006
     multivalued: false
     range: float
@@ -238,18 +246,17 @@ slots:
     multivalued: false
     range: float
     minimum_value: 0
-    maximum_value: 1
     required: true
     slot_group: "Measurement"
-  f14c_error:
-    title: F14C radiocarbon error
+  f14c_uncertainty:
+    title: F14C radiocarbon uncertainty
     examples:
       - value: "0.00434"
       - value: "0.023843"
     description: |-
       The 1-standard deviation uncertainty around the F14C (C14) measurement,
       normally indicated as a ± after the main value. Must be in the same format.
-      Sometimes referred to as the "error" or "sigma" of the measurement.
+      Sometimes referred to as the "uncertainty", "error," or "sigma" of the measurement.
     slot_uri: c14:000004
     multivalued: false
     range: float
@@ -291,15 +298,30 @@ slots:
     pattern: ""
     required: true
     slot_group: "Sample"
-  sample_material:
-    title: Radiocarbon dating sample material
+  sample_object:
+    title: Object submitted for dating
     examples:
-      - value: "UBERON:0002481"
+      - value: "UBERON:0003267"
       - value: "ENVO:01000560"
     description: |-
-      Material of the sample used to extract carbon used for radiocarbon dating measurements.
-      Use ontology terms where possible, e.g. from UBERON for anatomical parts, or ENVO for other
-      organic samples.
+      The type of object that was submitted for radiocarbon dating.
+      This should be a 'countable' object, such as a bone, shell, or piece of wood.
+      Use ontology terms where possible. For example, terms from UBERON for anatomical parts, or ENVO for other organic samples.
+    slot_uri: c14:000038
+    multivalued: false
+    range: string
+    pattern: "[a-zA-Z]{2,}:[a-zA-Z0-9]\\d+"
+    recommended: true
+    slot_group: "Sample"
+  sample_material:
+    title: Material used for dating
+    examples:
+      - value: "UBERON:0002481"
+      - value: "PO:0025034"
+    description: |-
+      The material or substance of the sample used to extract carbon used for radiocarbon dating measurements.
+      This should be an substance that cannot be counted, such as collagen, cellulose, or mineral.
+      Use ontology terms where possible, For example, terms from UBERON for anatomical parts, or ENVO for other organic samples.
     slot_uri: c14:000009
     multivalued: false
     range: string
@@ -448,8 +470,8 @@ slots:
     slot_uri: c14:000018
     multivalued: false
     range: float
-    minimum_value: -90
-    maximum_value: 90
+    minimum_value: -180
+    maximum_value: 180
     required: false
     recommended: true
     slot_group: "Sample"
@@ -537,7 +559,7 @@ slots:
     slot_uri: c14:000024
     multivalued: false
     range: float
-    required: true
+    recommended: true
     slot_group: "Quality control"
   pretreatment_yield:
     title: Weight after pretreatment
@@ -549,7 +571,7 @@ slots:
     slot_uri: c14:000025
     multivalued: false
     range: float
-    required: true
+    recommended: true
     slot_group: "Quality control"
   pretreatment_proportion_yield:
     title: Proportion yield after pretreatment
@@ -565,7 +587,6 @@ slots:
     range: float
     minimum_value: 0
     maximum_value: 1
-    required: false
     recommended: true
     slot_group: "Quality control"
   carbon_proportion:
@@ -575,14 +596,29 @@ slots:
       - value: "0.12"
       - value: "0.70"
     description: |-
-      Proportion of carbon in a non-proteinaceous sample used for dating (such as charcoal),
-      expressed as a value between 0 and 1. Used as a quality control measurement.
+      Proportion of carbon in the sample used for dating, expressed as a value between 0 and 1.
+      Used as a quality control measurement.
     slot_uri: c14:000027
     multivalued: false
     range: float
     minimum_value: 0
     maximum_value: 1
-    required: true
+    recommended: true
+    slot_group: "Quality control"
+  nitrogen_proportion:
+    title: Nitrogen proportion
+    examples:
+      - value: "0.41"
+      - value: "0.12"
+      - value: "0.70"
+    description: |-
+      Proportion of nitrogen in proteinaceous samples used for dating, expressed as a value between 0 and 1.
+      Used as a quality control measurement.
+    slot_uri: c14:000027
+    multivalued: false
+    range: float
+    minimum_value: 0
+    maximum_value: 1
     slot_group: "Quality control"
   delta_13_c:
     title: Delta 13C value
@@ -601,13 +637,13 @@ slots:
     required: false
     recommended: true
     slot_group: "Quality control"
-  delta_13_c_error:
-    title: Delta 13C error
+  delta_13_c_uncertainty:
+    title: Delta 13C uncertainty
     examples:
       - value: "0.1"
       - value: "0.2"
     description: |-
-      The error associated with the delta carbon-13 (δ13C) value expressed (‰) notation.
+      The uncertainty associated with the delta carbon-13 (δ13C) value expressed (‰) notation.
       Used as a quality control measurement.
     slot_uri: c14:000029
     multivalued: false
@@ -623,7 +659,7 @@ slots:
       - value: "AMS"
       - value: "IRMS"
     description: |-
-      Which spectrophotometry method was used to measure the delta carbon-13 value,
+      Which spectrometry method was used to measure the delta carbon-13 value,
       either with Isotope Ratio Mass Spectrometer (IRMS) or Accelerated Mass Spectrometer (AMS).
     slot_uri: c14:000030
     multivalued: false
@@ -674,13 +710,13 @@ slots:
     required: false
     recommended: true
     slot_group: "Quality control"
-  delta_15_n_error:
-    title: Delta 15N error
+  delta_15_n_uncertainty:
+    title: Delta 15N uncertainty
     examples:
       - value: "0.3"
       - value: "0.12"
     description: |-
-      The error associated with the delta nitrogen-15 (δ15N) value expressed (‰) notation.
+      The uncertainty associated with the delta nitrogen-15 (δ15N) value expressed (‰) notation.
       Used as a quality control measurement.
     slot_uri: c14:000034
     multivalued: false
@@ -706,13 +742,13 @@ slots:
     required: false
     recommended: false
     slot_group: "Quality control"
-  delta_34_s_error:
-    title: Delta 34S error
+  delta_34_s_uncertainty:
+    title: Delta 34S uncertainty
     examples:
       - value: "0.4"
       - value: "0.2"
     description: |-
-      The error associated with the delta sulfur-34 (δ34S) value expressed (‰) notation.
+      The uncertainty associated with the delta sulfur-34 (δ34S) value expressed (‰) notation.
       Used as a quality control measurement.
     slot_uri: c14:000036
     multivalued: false
@@ -733,4 +769,51 @@ slots:
     multivalued: false
     range: boolean
     required: true
+    slot_group: "Quality control"
+  secondary_carbonate_assessed:
+    title: Secondary carbonate assessed
+    examples:
+      - value: "true"
+      - value: "false"
+    description: |-
+      whether the sample was assessed for the presence of secondary carbonate.
+    slot_uri: c14:000039
+    multivalued: false
+    range: boolean
+    required: false
+    recommended: false
+    slot_group: "Quality control"
+  secondary_carbonate_detected:
+    title: Secondary carbonate detected
+    description: |-
+      Whether secondary carbonate was detected in the sample.
+      This would normally only be completed when secondary carbonate was assessed.
+    slot_uri: c14:000040
+    multivalued: false
+    range: boolean
+    required: false
+    recommended: false
+    slot_group: "Quality control"
+  secondary_carbonate_detection_method:
+    title: Secondary carbonate detection method
+    description: |-
+      The analytical or observational method used to assess the sample for secondary carbonate.
+    slot_uri: c14:000041
+    multivalued: false
+    range: CarbonateDetectionMethod
+    required: false
+    recommended: false
+    slot_group: "Quality control"
+  suspected_reservoir_effect_type:
+    title: Suspected reservoir effect type
+    examples:
+      - value: "true"
+      - value: "false"
+    description: |-
+      If a suspected reservoir effect is present, specify the type of suspected reservoir effect (e.g. marine, freshwater, volcanic).
+    slot_uri: c14:000042
+    multivalued: false
+    range: ReservoirEffectType
+    required: false
+    recommended: false
     slot_group: "Quality control"
