@@ -1,0 +1,32 @@
+id: https://w3id.org/miaard/miaard-schema/reservoir_effect_types
+name: reservoir_effect_types
+title: MIAARD reservoir effect types
+description: |-
+  Enumeration of reservoir effect types. Part of the MIAARD
+  standard.
+license: MIT
+see_also:
+  - https://miaard.github.io/miaard-schema
+
+prefixes:
+  c14: https://w3id.org/miaard/miaard-schema/
+
+default_prefix: c14
+
+enums:
+  ReservoirEffectType:
+    description: >-
+      Type of reservoir effect.
+    permissible_values:
+      Marine:
+        description: Marine reservoir effect
+      Freshwater:
+        description: Freshwater reservoir effect
+      Volcanic:
+        description: Volcanic reservoir effect
+      Geothermal:
+        description: Geothermal reservoir effect
+      Other:
+        description: Other reservoir effect
+      Unknown:
+        description: Unknown reservoir effect

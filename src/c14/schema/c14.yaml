@@ -22,6 +22,7 @@ imports:
   - enums/radiocarbon_measurement_methods
   - enums/delta13c_measurement_methods
   - enums/carbonate_detection_methods
+  - enums/reservoir_effect_types
 
 # STRUCTURED PATTERNS
 ## syntax: ^{PMID}|{DOI}|{URL}$: ^(PMID:\d+|https:\/\/doi\.org\/10\.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*))$
@@ -799,6 +800,19 @@ slots:
     slot_uri: c14:000041
     multivalued: false
     range: CarbonateDetectionMethod
+    required: false
+    recommended: false
+    slot_group: "Quality control"
+  suspected_reservoir_effect_type:
+    title: Suspected reservoir effect type
+    examples:
+      - value: "true"
+      - value: "false"
+    description: |-
+      If a suspected reservoir effect is present, specify the type of suspected reservoir effect (e.g. marine, freshwater, volcanic).
+    slot_uri: c14:000042
+    multivalued: false
+    range: ReservoirEffectType
     required: false
     recommended: false
     slot_group: "Quality control"
