@@ -41,9 +41,9 @@ classes:
       - lab_code
       - lab_id
       - conventional_age
-      - conventional_age_error
+      - conventional_age_uncertainty
       - f14c
-      - f14c_error
+      - f14c_uncertainty
       - delta_13_c_calculation_method
       - sample_ids
       - sample_material
@@ -66,7 +66,7 @@ classes:
       - pretreatment_proportion_yield
       - carbon_proportion
       - delta_13_c
-      - delta_13_c_error
+      - delta_13_c_uncertainty
       - delta_13_c_method
       - suspected_reservoir_effect
 
@@ -93,9 +93,9 @@ classes:
       - nitrogen_proportion # Proteinaceous module
       - carbon_nitro_ratio # Proteinaceous module
       - delta_15_n # Proteinaceous module
-      - delta_15_n_error # Proteinaceous module
+      - delta_15_n_uncertainty # Proteinaceous module
       - delta_34_s # Proteinaceous module
-      - delta_34_s_error # Proteinaceous module
+      - delta_34_s_uncertainty # Proteinaceous module
 
   CarbonateSample:
     description: Terms specific to carbonate samples being dated.
@@ -147,7 +147,7 @@ classes:
     slot_usage:
       conventional_age:
         required: true
-      conventional_age_error:
+      conventional_age_uncertainty:
         required: true
 
   ConventionalAgeRadiocarbonDateCarbonateSample:
@@ -160,7 +160,7 @@ classes:
     slot_usage:
       conventional_age:
         required: true
-      conventional_age_error:
+      conventional_age_uncertainty:
         required: true
 
 slots:
@@ -212,15 +212,15 @@ slots:
     range: float
     recommended: true
     slot_group: "Measurement"
-  conventional_age_error:
-    title: Conventional radiocarbon age error
+  conventional_age_uncertainty:
+    title: Conventional radiocarbon age uncertainty
     examples:
       - value: "25"
       - value: "620"
     description: |-
       The 1-standard deviation around the conventional radiocarbon age (C14) measurement,
       normally indicated as a ± after the main age. Must be in the same format (i.e. 14C yr BP).
-      Sometimes referred to as the "error" or "sigma" of the measurement.
+      Sometimes referred to as the "uncertainty" or "sigma" of the measurement.
     slot_uri: c14:000006
     multivalued: false
     range: float
@@ -241,15 +241,15 @@ slots:
     minimum_value: 0
     required: true
     slot_group: "Measurement"
-  f14c_error:
-    title: F14C radiocarbon error
+  f14c_uncertainty:
+    title: F14C radiocarbon uncertainty
     examples:
       - value: "0.00434"
       - value: "0.023843"
     description: |-
       The 1-standard deviation uncertainty around the F14C (C14) measurement,
       normally indicated as a ± after the main value. Must be in the same format.
-      Sometimes referred to as the "error" or "sigma" of the measurement.
+      Sometimes referred to as the "uncertainty", "error," or "sigma" of the measurement.
     slot_uri: c14:000004
     multivalued: false
     range: float
@@ -615,13 +615,13 @@ slots:
     required: false
     recommended: true
     slot_group: "Quality control"
-  delta_13_c_error:
-    title: Delta 13C error
+  delta_13_c_uncertainty:
+    title: Delta 13C uncertainty
     examples:
       - value: "0.1"
       - value: "0.2"
     description: |-
-      The error associated with the delta carbon-13 (δ13C) value expressed (‰) notation.
+      The uncertainty associated with the delta carbon-13 (δ13C) value expressed (‰) notation.
       Used as a quality control measurement.
     slot_uri: c14:000029
     multivalued: false
@@ -688,13 +688,13 @@ slots:
     required: false
     recommended: true
     slot_group: "Quality control"
-  delta_15_n_error:
-    title: Delta 15N error
+  delta_15_n_uncertainty:
+    title: Delta 15N uncertainty
     examples:
       - value: "0.3"
       - value: "0.12"
     description: |-
-      The error associated with the delta nitrogen-15 (δ15N) value expressed (‰) notation.
+      The uncertainty associated with the delta nitrogen-15 (δ15N) value expressed (‰) notation.
       Used as a quality control measurement.
     slot_uri: c14:000034
     multivalued: false
@@ -720,13 +720,13 @@ slots:
     required: false
     recommended: false
     slot_group: "Quality control"
-  delta_34_s_error:
-    title: Delta 34S error
+  delta_34_s_uncertainty:
+    title: Delta 34S uncertainty
     examples:
       - value: "0.4"
       - value: "0.2"
     description: |-
-      The error associated with the delta sulfur-34 (δ34S) value expressed (‰) notation.
+      The uncertainty associated with the delta sulfur-34 (δ34S) value expressed (‰) notation.
       Used as a quality control measurement.
     slot_uri: c14:000036
     multivalued: false
