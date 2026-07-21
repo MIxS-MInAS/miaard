@@ -1513,9 +1513,9 @@ slots:
     multivalued: false
     minimum_value: 0
     maximum_value: 1
-  f14c_error:
-    name: f14c_error
-    definition_uri: https://w3id.org/miaard/miaard-schema/f14c_error
+  f14c_uncertainty:
+    name: f14c_uncertainty
+    definition_uri: https://w3id.org/miaard/miaard-schema/f14c_uncertainty
     description:
       "The 1-standard deviation uncertainty around the F14C (C14) measurement,\n\
       normally indicated as a \xB1 after the main value. Must be in the same format.\n\
@@ -1566,9 +1566,9 @@ slots:
     range: float
     required: true
     multivalued: false
-  conventional_age_error:
-    name: conventional_age_error
-    definition_uri: https://w3id.org/miaard/miaard-schema/conventional_age_error
+  conventional_age_uncertainty:
+    name: conventional_age_uncertainty
+    definition_uri: https://w3id.org/miaard/miaard-schema/conventional_age_uncertainty
     description:
       "The 1-standard deviation around the conventional radiocarbon age\
       \ (C14) measurement,\nnormally indicated as a \xB1 after the main age. Must\
@@ -2179,9 +2179,9 @@ slots:
     multivalued: false
     minimum_value: -1000
     maximum_value: 1000
-  delta_13_c_error:
-    name: delta_13_c_error
-    definition_uri: https://w3id.org/miaard/miaard-schema/delta_13_c_error
+  delta_13_c_uncertainty:
+    name: delta_13_c_uncertainty
+    definition_uri: https://w3id.org/miaard/miaard-schema/delta_13_c_uncertainty
     description:
       "The error associated with the delta carbon-13 (\u03B413C) value\
       \ expressed (\u2030) notation.\nUsed as a quality control measurement."
@@ -2304,9 +2304,9 @@ slots:
     multivalued: false
     minimum_value: -1000
     maximum_value: 1000
-  delta_15_n_error:
-    name: delta_15_n_error
-    definition_uri: https://w3id.org/miaard/miaard-schema/delta_15_n_error
+  delta_15_n_uncertainty:
+    name: delta_15_n_uncertainty
+    definition_uri: https://w3id.org/miaard/miaard-schema/delta_15_n_uncertainty
     description:
       "The error associated with the delta nitrogen-15 (\u03B415N) value\
       \ expressed (\u2030) notation.\nUsed as a quality control measurement."
@@ -2355,9 +2355,9 @@ slots:
     multivalued: false
     minimum_value: -1000
     maximum_value: 1000
-  delta_34_s_error:
-    name: delta_34_s_error
-    definition_uri: https://w3id.org/miaard/miaard-schema/delta_34_s_error
+  delta_34_s_uncertainty:
+    name: delta_34_s_uncertainty
+    definition_uri: https://w3id.org/miaard/miaard-schema/delta_34_s_uncertainty
     description:
       "The error associated with the delta sulfur-34 (\u03B434S) value\
       \ expressed (\u2030) notation.\nUsed as a quality control measurement."
@@ -2425,9 +2425,9 @@ classes:
       - lab_code
       - lab_id
       - f14c
-      - f14c_error
+      - f14c_uncertainty
       - conventional_age
-      - conventional_age_error
+      - conventional_age_uncertainty
       - delta_13_c_calculation_method
       - sample_ids
       - sample_material
@@ -2450,7 +2450,7 @@ classes:
       - pretreatment_proportion_yield
       - carbon_proportion
       - delta_13_c
-      - delta_13_c_error
+      - delta_13_c_uncertainty
       - delta_13_c_method
       - suspected_reservoir_effect
     class_uri: c14:RadiocarbonDate
@@ -2481,9 +2481,9 @@ classes:
     slots:
       - carbon_nitro_ratio
       - delta_15_n
-      - delta_15_n_error
+      - delta_15_n_uncertainty
       - delta_34_s
-      - delta_34_s_error
+      - delta_34_s_uncertainty
     class_uri: c14:ProteinaceousSample
   CarbonateSample:
     name: CarbonateSample
