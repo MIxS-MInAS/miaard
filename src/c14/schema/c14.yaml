@@ -46,6 +46,7 @@ classes:
       - f14c_uncertainty
       - delta_13_c_calculation_method
       - sample_ids
+      - sample_object
       - sample_material
       - sample_taxon_id
       - sample_taxon_id_confidence
@@ -291,15 +292,30 @@ slots:
     pattern: ""
     required: true
     slot_group: "Sample"
-  sample_material:
-    title: Radiocarbon dating sample material
+  sample_object:
+    title: Object submitted for dating
     examples:
-      - value: "UBERON:0002481"
+      - value: "UBERON:0003267"
       - value: "ENVO:01000560"
     description: |-
-      Material of the sample used to extract carbon used for radiocarbon dating measurements.
-      Use ontology terms where possible, e.g. from UBERON for anatomical parts, or ENVO for other
-      organic samples.
+      The type of object that was submitted for radiocarbon dating.
+      This should be a 'countable' object, such as a bone, shell, or piece of wood.
+      Use ontology terms where possible. For example, terms from UBERON for anatomical parts, or ENVO for other organic samples.
+    slot_uri: c14:000038
+    multivalued: false
+    range: string
+    pattern: "[a-zA-Z]{2,}:[a-zA-Z0-9]\\d+"
+    recommended: true
+    slot_group: "Sample"
+  sample_material:
+    title: Material used for dating
+    examples:
+      - value: "UBERON:0002481"
+      - value: "PO:0025034"
+    description: |-
+      The material or substance of the sample used to extract carbon used for radiocarbon dating measurements.
+      This should be an substance that cannot be counted, such as collagen, cellulose, or mineral.
+      Use ontology terms where possible, For example, terms from UBERON for anatomical parts, or ENVO for other organic samples.
     slot_uri: c14:000009
     multivalued: false
     range: string
