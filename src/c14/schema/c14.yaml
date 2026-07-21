@@ -106,6 +106,9 @@ classes:
     class_uri: c14:CarbonateSample
     slots:
       - recrystalisation # Carbonate module
+      - secondary_carbonate_assessed # Carbonate module
+      - secondary_carbonate_detected # Carbonate module
+      - secondary_carbonate_detection_method # Carbonate module
 
   RadiocarbonDateProteinaceousSample:
     description: A radiocarbon determination on a proteinaceous sample.
