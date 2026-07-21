@@ -90,6 +90,7 @@ classes:
     is_a: Extension
     class_uri: c14:ProteinaceousSample
     slots:
+      - nitrogen_proportion # Proteinaceous module
       - carbon_nitro_ratio # Proteinaceous module
       - delta_15_n # Proteinaceous module
       - delta_15_n_error # Proteinaceous module
@@ -581,6 +582,21 @@ slots:
     minimum_value: 0
     maximum_value: 1
     recommended: true
+    slot_group: "Quality control"
+  nitrogen_proportion:
+    title: Nitrogen proportion
+    examples:
+      - value: "0.41"
+      - value: "0.12"
+      - value: "0.70"
+    description: |-
+      Proportion of nitrogen in proteinaceous samples used for dating, expressed as a value between 0 and 1.
+      Used as a quality control measurement.
+    slot_uri: c14:000027
+    multivalued: false
+    range: float
+    minimum_value: 0
+    maximum_value: 1
     slot_group: "Quality control"
   delta_13_c:
     title: Delta 13C value
