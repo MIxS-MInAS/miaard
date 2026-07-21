@@ -536,7 +536,7 @@ slots:
     slot_uri: c14:000024
     multivalued: false
     range: float
-    required: true
+    recommended: true
     slot_group: "Quality control"
   pretreatment_yield:
     title: Weight after pretreatment
@@ -548,7 +548,7 @@ slots:
     slot_uri: c14:000025
     multivalued: false
     range: float
-    required: true
+    recommended: true
     slot_group: "Quality control"
   pretreatment_proportion_yield:
     title: Proportion yield after pretreatment
@@ -564,7 +564,6 @@ slots:
     range: float
     minimum_value: 0
     maximum_value: 1
-    required: false
     recommended: true
     slot_group: "Quality control"
   carbon_proportion:
@@ -574,14 +573,14 @@ slots:
       - value: "0.12"
       - value: "0.70"
     description: |-
-      Proportion of carbon in a non-proteinaceous sample used for dating (such as charcoal),
-      expressed as a value between 0 and 1. Used as a quality control measurement.
+      Proportion of carbon in the sample used for dating, expressed as a value between 0 and 1.
+      Used as a quality control measurement.
     slot_uri: c14:000027
     multivalued: false
     range: float
     minimum_value: 0
     maximum_value: 1
-    required: true
+    recommended: true
     slot_group: "Quality control"
   delta_13_c:
     title: Delta 13C value
