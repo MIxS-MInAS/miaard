@@ -448,8 +448,8 @@ slots:
     slot_uri: c14:000018
     multivalued: false
     range: float
-    minimum_value: -90
-    maximum_value: 90
+    minimum_value: -180
+    maximum_value: 180
     required: false
     recommended: true
     slot_group: "Sample"
