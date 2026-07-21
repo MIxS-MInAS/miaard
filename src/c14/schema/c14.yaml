@@ -72,6 +72,7 @@ classes:
       - delta_13_c_uncertainty
       - delta_13_c_method
       - suspected_reservoir_effect
+      - suspected_reservoir_effect_type
 
   RadiocarbonDateCollection:
     tree_root: true
