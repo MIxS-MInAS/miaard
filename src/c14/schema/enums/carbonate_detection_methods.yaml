@@ -1,0 +1,32 @@
+id: https://w3id.org/miaard/miaard-schema/carbonate_detection_methods
+name: carbonate_detection_methods
+title: MIAARD carbonate detection methods
+description: |-
+  Enumeration of carbonate detection methods. Part of the MIAARD
+  standard.
+license: MIT
+see_also:
+  - https://miaard.github.io/miaard-schema
+
+prefixes:
+  c14: https://w3id.org/miaard/miaard-schema/
+
+default_prefix: c14
+
+enums:
+  CarbonateDetectionMethod:
+    description: >-
+      Which method was used to detect presence of carbonate.
+    permissible_values:
+      XRD:
+        description: X-ray diffraction
+      FTIR:
+        description: Fourier-transform infrared spectroscopy
+      Feigl staining:
+        description: Feigl staining
+      Optical microscopy:
+        description: Optical microscopy
+      Other:
+        description: Other method for detecting carbonate
+      Unknown:
+        description: Unknown detection method

@@ -21,6 +21,7 @@ imports:
   - enums/pretreatment_methods
   - enums/radiocarbon_measurement_methods
   - enums/delta13c_measurement_methods
+  - enums/carbonate_detection_methods
 
 # STRUCTURED PATTERNS
 ## syntax: ^{PMID}|{DOI}|{URL}$: ^(PMID:\d+|https:\/\/doi\.org\/10\.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*))$
@@ -763,4 +764,38 @@ slots:
     multivalued: false
     range: boolean
     required: true
+    slot_group: "Quality control"
+  secondary_carbonate_assessed:
+    title: Secondary carbonate assessed
+    examples:
+      - value: "true"
+      - value: "false"
+    description: |-
+      whether the sample was assessed for the presence of secondary carbonate.
+    slot_uri: c14:000039
+    multivalued: false
+    range: boolean
+    required: false
+    recommended: false
+    slot_group: "Quality control"
+  secondary_carbonate_detected:
+    title: Secondary carbonate detected
+    description: |-
+      Whether secondary carbonate was detected in the sample.
+      This would normally only be completed when secondary carbonate was assessed.
+    slot_uri: c14:000040
+    multivalued: false
+    range: boolean
+    required: false
+    recommended: false
+    slot_group: "Quality control"
+  secondary_carbonate_detection_method:
+    title: Secondary carbonate detection method
+    description: |-
+      The analytical or observational method used to assess the sample for secondary carbonate.
+    slot_uri: c14:000041
+    multivalued: false
+    range: CarbonateDetectionMethod
+    required: false
+    recommended: false
     slot_group: "Quality control"
