@@ -172,7 +172,7 @@ slots:
       - value: "CN-XX"
     description: |-
       Unique laboratory code designation of the institution that made the measurement.
-      This is the prefix used for each determination ID. The prefix should be
+      This is the prefix used for each determination identifier. The prefix should be
       derived from: https://radiocarbon.webhost.uits.arizona.edu/laboratories.
     slot_uri: c14:000001
     multivalued: false
@@ -203,9 +203,9 @@ slots:
       - value: "37330"
     description: |-
       The uncalibrated age from the laboratory measurement. Also known as the
-      conventional radiocarbon age (CRA). Should be a conventional 14C age (i.e., 14C year BP)
-      NOT in AD/BC format. This is typically the 'raw' age reported by the radiocarbon lab, in
-      Before Present (BP) notation.
+      conventional radiocarbon age (CRA). Should be a conventional 14C age in 14C years Before Present (BP)
+      NOT in Anno Domini/Before Christ (AD/BC) format.
+      This is typically the 'raw' age reported by the radiocarbon lab.
     slot_uri: c14:000005
     multivalued: false
     range: float
@@ -217,8 +217,8 @@ slots:
       - value: "25"
       - value: "620"
     description: |-
-      The 1-standard deviation around the conventional radiocarbon age (C14) measurement,
-      normally indicated as a ± after the main age. Must be in the same format (i.e. 14C yr BP).
+      The 1-standard deviation around the conventional radiocarbon age (CRA) measurement,
+      normally indicated as a '±' after the main age. Must be in the same format (i.e. 14C years BP).
       Sometimes referred to as the "error" or "sigma" of the measurement.
     slot_uri: c14:000006
     multivalued: false
@@ -232,7 +232,7 @@ slots:
       - value: "0.83756"
       - value: "0.5371"
     description: |-
-      The F14C value from the laboratory measurement, i.e. the fraction modern carbon.
+      The Fraction Modern Carbon (F14C or Fm) value from the laboratory measurement, i.e. the fraction modern carbon.
       For older determinations, generally equivalent to "percent modern" (pMC, or pM) divided by 100.
     slot_uri: c14:000003
     multivalued: false
@@ -248,8 +248,8 @@ slots:
       - value: "0.023843"
     description: |-
       The 1-standard deviation uncertainty around the F14C (C14) measurement,
-      normally indicated as a ± after the main value. Must be in the same format.
-      Sometimes referred to as the "error" or "sigma" of the measurement.
+      normally indicated as a '±' after the main value. Must be in the same format.
+      Often referred to as the "error" or "sigma" of the measurement.
     slot_uri: c14:000004
     multivalued: false
     range: float
@@ -284,7 +284,7 @@ slots:
       - value: "Tumba XVIII"
     description: |-
       Any identifier associated with the sample under measurement
-      (e.g. sample collection ID, archive object accession, ICOM/CIDOC Museum ID).
+      (e.g. sample collection identifier, archive object accession, ICOM/CIDOC Museum identifier).
     slot_uri: c14:000008
     multivalued: true
     range: string
@@ -298,8 +298,8 @@ slots:
       - value: "ENVO:01000560"
     description: |-
       Material of the sample used to extract carbon used for radiocarbon dating measurements.
-      Use ontology terms where possible, e.g. from UBERON for anatomical parts, or ENVO for other
-      organic samples.
+      Use ontology terms where possible, e.g. from UBERON for anatomical parts (www.ebi.ac.uk/ols4/ontologies/uberon), or ENVO for other
+      organic materials (www.ebi.ac.uk/ols4/ontologies/envo).
     slot_uri: c14:000009
     multivalued: false
     range: string
@@ -313,9 +313,9 @@ slots:
       - value: "gbif:2441105"
       - value: "bold.taxonomy:786175"
     description: |-
-      A taxonomic ID of the organism from which the sample used to extract carbon used for
-      radiocarbon measurement originated. The taxonomic ID should come from an established
-      ontology or database.
+      A taxonomic identifier of the organism from which the sample used to extract carbon used for
+      radiocarbon measurement originated. The taxonomic identifier should come from an established
+      ontology or database  (e.g., https://www.ncbi.nlm.nih.gov/taxonomy).
     slot_uri: c14:000010
     multivalued: true
     range: string
@@ -345,8 +345,8 @@ slots:
       - value: "Capra sp."
       - value: "Ulmus davidiana var. japonica"
     description: |-
-      A scientific name of the taxon corresponding to the taxonomic ID, or when a
-      taxonomic ID does not currently exist for the specific taxon.
+      A scientific name of the taxon corresponding to the taxonomic identifier, or when a
+      taxonomic identifier does not currently exist for the specific taxon.
     slot_uri: c14:000012
     multivalued: false
     range: string
@@ -377,7 +377,7 @@ slots:
       - value: "false"
     description: |-
       Specify whether the sample has suspected contamination that may influence measurement
-      (organic glue, consolidant, rootlets, embalming solution, staining etc.).
+      (organic glue, consolidant, humics, rootlets, embalming solution, staining etc.).
     slot_uri: c14:000014
     multivalued: false
     range: boolean
@@ -425,7 +425,7 @@ slots:
       - value: "51.75"
       - value: "-13.163"
     description: |-
-      The geographic latitude (in decimal degrees, using the spatial reference system) of the geographic center of a dcterms:Location. Positive values are north
+      The geographic latitude (in decimal degrees, using the spatial reference system) of the geographic center of a dcterms:Location (https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/Location/). Positive values are north
       of the Equator, negative values are south of it. Legal values lie between -90 and 90, inclusive.
     slot_uri: c14:000017
     multivalued: false
@@ -624,7 +624,7 @@ slots:
       - value: "IRMS"
     description: |-
       Which spectrophotometry method was used to measure the delta carbon-13 value,
-      either with Isotope Ratio Mass Spectrometer (IRMS) or Accelerated Mass Spectrometer (AMS).
+      either with Isotope Ratio Mass Spectrometer (IRMS) or Accelerator Mass Spectrometer (AMS).
     slot_uri: c14:000030
     multivalued: false
     range: Delta13CMeasurementMethod
