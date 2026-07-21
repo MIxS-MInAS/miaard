@@ -24,3 +24,7 @@ enums:
         description: Isotope Ratio Mass Spectrometer
       CRDS:
         description: Cavity Ring-Down Spectroscopy
+      Other:
+        description: Other method (e.g. mass spectrophotometry methods)
+      Unknown:
+        description: Unknown spectrometry method

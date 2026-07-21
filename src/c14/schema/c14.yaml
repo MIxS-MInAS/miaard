@@ -623,7 +623,7 @@ slots:
       - value: "AMS"
       - value: "IRMS"
     description: |-
-      Which spectrophotometry method was used to measure the delta carbon-13 value,
+      Which spectrometry method was used to measure the delta carbon-13 value,
       either with Isotope Ratio Mass Spectrometer (IRMS) or Accelerated Mass Spectrometer (AMS).
     slot_uri: c14:000030
     multivalued: false
